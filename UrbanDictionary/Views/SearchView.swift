@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @StateObject private var viewModel = ViewModel()
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
         List {
@@ -30,7 +30,7 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SearchView()
+            SearchView(viewModel: .init())
         }
     }
 }

@@ -38,7 +38,7 @@ struct DefinitionsView: View {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if viewModel.shouldShowSearch {
                     NavigationLink {
-                        SearchView()
+                        viewFactory.makeSearchView()
                     } label: {
                         Image(systemName: "magnifyingglass")
                     }

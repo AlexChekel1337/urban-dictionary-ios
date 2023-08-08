@@ -30,4 +30,10 @@ class ViewFactory {
         let view = DefinitionsView(viewModel: viewModel)
         return view
     }
+
+    @MainActor func makeSearchView() -> some View {
+        let viewModel = SearchView.ViewModel()
+        let view = SearchView(viewModel: viewModel)
+        return view
+    }
 }

@@ -11,8 +11,6 @@
 		E01A5FC12A81113C00694C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01A5FC02A81113C00694C29 /* Assets.xcassets */; };
 		E01A5FC42A81113C00694C29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01A5FC32A81113C00694C29 /* Preview Assets.xcassets */; };
 		E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FCB2A8119CD00694C29 /* HTTPClient.swift */; };
-		E01A5FCF2A811A5E00694C29 /* WordsOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FCE2A811A5E00694C29 /* WordsOfTheDayView.swift */; };
-		E01A5FD12A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD02A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift */; };
 		E01A5FD52A811C4F00694C29 /* UrbanDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */; };
 		E01A5FD82A811E7500694C29 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
 		E01A5FDB2A81275D00694C29 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDA2A81275D00694C29 /* WordView.swift */; };
@@ -35,8 +33,6 @@
 		E01A5FC02A81113C00694C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01A5FC32A81113C00694C29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E01A5FCB2A8119CD00694C29 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		E01A5FCE2A811A5E00694C29 /* WordsOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsOfTheDayView.swift; sourceTree = "<group>"; };
-		E01A5FD02A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WordsOfTheDayView-ViewModel.swift"; sourceTree = "<group>"; };
 		E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanDictionaryService.swift; sourceTree = "<group>"; };
 		E01A5FD72A811E7500694C29 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		E01A5FDA2A81275D00694C29 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 				E01A5FD92A81273F00694C29 /* Components */,
 				E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */,
 				E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */,
-				E01A5FCE2A811A5E00694C29 /* WordsOfTheDayView.swift */,
-				E01A5FD02A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift */,
 				E01A5FE12A81909600694C29 /* SearchView.swift */,
 				E01A5FE32A8190A200694C29 /* SearchView-ViewModel.swift */,
 			);
@@ -255,10 +249,8 @@
 				E01A5FD82A811E7500694C29 /* Word.swift in Sources */,
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
-				E01A5FCF2A811A5E00694C29 /* WordsOfTheDayView.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
 				E01A5FEE2A82C29C00694C29 /* DefinitionsView.swift in Sources */,
-				E01A5FD12A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FE82A819C5D00694C29 /* SuggestionView.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,

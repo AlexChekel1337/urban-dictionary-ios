@@ -18,7 +18,6 @@ struct UrbanDictionaryApp: App {
         WindowGroup {
             NavigationView {
                 viewFactory.makeWordsOfTheDayView()
-                    .environment(\.viewFactory, viewFactory)
             }
         }
     }
