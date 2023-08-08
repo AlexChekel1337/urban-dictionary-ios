@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */; };
-		E01A5FBF2A81113C00694C29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FBE2A81113C00694C29 /* ContentView.swift */; };
 		E01A5FC12A81113C00694C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01A5FC02A81113C00694C29 /* Assets.xcassets */; };
 		E01A5FC42A81113C00694C29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01A5FC32A81113C00694C29 /* Preview Assets.xcassets */; };
 		E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FCB2A8119CD00694C29 /* HTTPClient.swift */; };
@@ -25,12 +24,14 @@
 		E01A5FE82A819C5D00694C29 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE72A819C5D00694C29 /* SuggestionView.swift */; };
 		E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE92A8285EC00694C29 /* URL+StaticString.swift */; };
 		E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FEB2A828D1500694C29 /* ShareSheetView.swift */; };
+		E01A5FEE2A82C29C00694C29 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */; };
+		E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */; };
+		E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF22A82C92E00694C29 /* ViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E01A5FB92A81113C00694C29 /* UrbanDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanDictionaryApp.swift; sourceTree = "<group>"; };
-		E01A5FBE2A81113C00694C29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E01A5FC02A81113C00694C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01A5FC32A81113C00694C29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E01A5FCB2A8119CD00694C29 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		E01A5FE72A819C5D00694C29 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		E01A5FE92A8285EC00694C29 /* URL+StaticString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StaticString.swift"; sourceTree = "<group>"; };
 		E01A5FEB2A828D1500694C29 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
+		E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
+		E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefinitionsView-ViewModel.swift"; sourceTree = "<group>"; };
+		E01A5FF22A82C92E00694C29 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,6 @@
 				E01A5FCD2A811A4F00694C29 /* Views */,
 				E01A5FCA2A8119C400694C29 /* HTTPClient */,
 				E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */,
-				E01A5FBE2A81113C00694C29 /* ContentView.swift */,
 				E01A5FC02A81113C00694C29 /* Assets.xcassets */,
 				E01A5FC22A81113C00694C29 /* Preview Content */,
 			);
@@ -110,7 +113,10 @@
 		E01A5FCD2A811A4F00694C29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E01A5FF12A82C92100694C29 /* ViewFactory */,
 				E01A5FD92A81273F00694C29 /* Components */,
+				E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */,
+				E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */,
 				E01A5FCE2A811A5E00694C29 /* WordsOfTheDayView.swift */,
 				E01A5FD02A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift */,
 				E01A5FE12A81909600694C29 /* SearchView.swift */,
@@ -163,6 +169,14 @@
 				E01A5FE92A8285EC00694C29 /* URL+StaticString.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E01A5FF12A82C92100694C29 /* ViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				E01A5FF22A82C92E00694C29 /* ViewFactory.swift */,
+			);
+			path = ViewFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,16 +251,18 @@
 			files = (
 				E01A5FDB2A81275D00694C29 /* WordView.swift in Sources */,
 				E01A5FD52A811C4F00694C29 /* UrbanDictionaryService.swift in Sources */,
+				E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */,
 				E01A5FD82A811E7500694C29 /* Word.swift in Sources */,
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E01A5FCF2A811A5E00694C29 /* WordsOfTheDayView.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
+				E01A5FEE2A82C29C00694C29 /* DefinitionsView.swift in Sources */,
 				E01A5FD12A811A8B00694C29 /* WordsOfTheDayView-ViewModel.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
-				E01A5FBF2A81113C00694C29 /* ContentView.swift in Sources */,
 				E01A5FE82A819C5D00694C29 /* SuggestionView.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
+				E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
 				E01A5FE22A81909600694C29 /* SearchView.swift in Sources */,

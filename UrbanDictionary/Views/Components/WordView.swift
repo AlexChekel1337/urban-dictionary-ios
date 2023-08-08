@@ -77,7 +77,6 @@ struct WordView_Previews: PreviewProvider {
             word: "Lorem Ipsum",
             definition: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             example: "Lorem ipsum",
-            date: "Today",
             author: "A very long author field that will probably be clipped",
             thumbsUp: 10456,
             thumbsDown: 1876,

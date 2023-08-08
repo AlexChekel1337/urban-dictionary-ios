@@ -14,7 +14,6 @@ struct Word: Codable, Identifiable {
     let word: String
     let definition: String
     let example: String
-    let date: String
     let author: String
     let thumbsUp: Int
     let thumbsDown: Int
@@ -26,19 +25,17 @@ struct Word: Codable, Identifiable {
         case word
         case definition
         case example
-        case date
         case author
         case thumbsUp = "thumbs_up"
         case thumbsDown = "thumbs_down"
         case permalink
     }
 
-    init(id: Int, word: String, definition: String, example: String, date: String, author: String, thumbsUp: Int, thumbsDown: Int, permalink: URL) {
+    init(id: Int, word: String, definition: String, example: String, author: String, thumbsUp: Int, thumbsDown: Int, permalink: URL) {
         self.id = id
         self.word = word
         self.definition = definition
         self.example = example
-        self.date = date
         self.author = author
         self.thumbsUp = thumbsUp
         self.thumbsDown = thumbsDown
@@ -51,7 +48,6 @@ struct Word: Codable, Identifiable {
         self.word = try container.decode(String.self, forKey: .word)
         self.definition = try container.decode(String.self, forKey: .definition)
         self.example = try container.decode(String.self, forKey: .example)
-        self.date = try container.decode(String.self, forKey: .date)
         self.author = try container.decode(String.self, forKey: .author)
         self.thumbsUp = try container.decode(Int.self, forKey: .thumbsUp)
         self.thumbsDown = try container.decode(Int.self, forKey: .thumbsDown)

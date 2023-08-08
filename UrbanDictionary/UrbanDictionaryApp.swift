@@ -8,15 +8,17 @@
 import SwiftUI
 
 // TODOs:
-// - Repurpose WordsOfTheDayView into DefinitionsView to make it reusable in search
 // - Change search algorithms to instantly update the contents and throttle the requests
 
 @main
 struct UrbanDictionaryApp: App {
+    private let viewFactory = ViewFactory()
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                WordsOfTheDayView()
+                viewFactory.makeWordsOfTheDayView()
+                    .environment(\.viewFactory, viewFactory)
             }
         }
     }
