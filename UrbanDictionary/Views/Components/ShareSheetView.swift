@@ -26,15 +26,18 @@ private struct ShareSheetViewRepresentable: UIViewControllerRepresentable {
     }
 }
 
-struct ShareSheetView: View {
-    private let item: Any
-
-    init(sharing item: Any) {
-        self.item = item
-    }
-
-    var body: some View {
-        ShareSheetViewRepresentable(activityItems: [item])
-            .ignoresSafeArea()
+extension View {
+    @ViewBuilder func shareSheet(sharing item: Any, isPresented: Binding<Bool>) -> some View {
+        self.popover(isPresented: isPresented) {
+            if #available(iOS 16, *) {
+                ShareSheetViewRepresentable(activityItems: [item])
+                    .ignoresSafeArea()
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.hidden)
+            } else {
+                ShareSheetViewRepresentable(activityItems: [item])
+                    .ignoresSafeArea()
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@ struct WordView: View {
                         Image(systemName: "square.and.arrow.up")
                             .foregroundColor(.accentColor)
                     }
+                    .shareSheet(sharing: word.permalink, isPresented: $isShareSheetPresented)
                 }
                 .lineLimit(1)
                 .font(.footnote)
@@ -63,9 +64,6 @@ struct WordView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .sheet(isPresented: $isShareSheetPresented) {
-                ShareSheetView(sharing: word.permalink)
-            }
         }
     }
 }
