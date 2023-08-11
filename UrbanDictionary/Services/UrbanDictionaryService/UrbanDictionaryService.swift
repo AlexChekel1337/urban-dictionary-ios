@@ -26,9 +26,8 @@ class UrbanDictionaryService {
     }
 
     func define(_ term: String, page: Int = 1) async throws -> [Word] {
-        let encodedTerm = term.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? term
         let parameters = [
-            "term": encodedTerm,
+            "term": term,
             "page": "\(page)"
         ]
 
@@ -38,8 +37,7 @@ class UrbanDictionaryService {
     }
 
     func autocomplete(query: String) async throws -> [Suggestion] {
-        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-        let parameters = ["term": encodedQuery]
+        let parameters = ["term": query]
 
         let response: ResultsResponse<Suggestion> = try await client.get(path: "/v0/autocomplete-extra", parameters: parameters)
 
