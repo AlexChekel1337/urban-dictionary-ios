@@ -9,7 +9,6 @@ import SwiftUI
 
 // TODOs:
 // - Look into wrong definition urls. Defining "red apple" will result in empty screen.
-// - Change search algorithms to instantly update the contents and throttle the requests
 
 @main
 struct UrbanDictionaryApp: App {

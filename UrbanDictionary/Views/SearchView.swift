@@ -20,6 +20,9 @@ struct SearchView: View {
                     ActivityIndicatorView(isAnimating: .constant(true))
                         .frame(maxWidth: .infinity)
                         .listSectionSeparator(.hidden)
+                case .error:
+                    PresentableMessageView(emoji: "🚧", text: "An error occurred")
+                        .listSectionSeparator(.hidden)
                 case .suggestions(let suggestions) where suggestions.isEmpty:
                     PresentableMessageView(emoji: "😔", text: "Nothing found")
                         .listSectionSeparator(.hidden)

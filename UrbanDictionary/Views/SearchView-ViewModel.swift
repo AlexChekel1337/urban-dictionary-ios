@@ -14,12 +14,11 @@ extension SearchView {
             case noQuery
             case loading
             case suggestions([Suggestion])
+            case error
         }
 
         @Published private(set) var state: State = .suggestions([])
-
         @Published var searchTerm: String = ""
-        @Published private(set) var suggestions: [Suggestion] = []
 
         private let service = UrbanDictionaryService()
         private var searchTermObservationCancellable: AnyCancellable?
@@ -27,7 +26,6 @@ extension SearchView {
 
         init() {
             searchTermObservationCancellable =  $searchTerm
-                .debounce(for: 1, scheduler: DispatchQueue.main)
                 .sink { [weak self] term in
                     self?.performSearch(for: term)
                 }
@@ -35,21 +33,27 @@ extension SearchView {
 
         private func performSearch(for term: String) {
             guard !term.isEmpty else {
-                suggestions = [.init(term: "Enter search term", preview: "Bottom text")]
-                return
+                return state = .noQuery
             }
 
-            print("Will search for '\(term)'")
+            state = .loading
 
+            currentTask?.cancel()
             currentTask = Task {
                 do {
+                    try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
                     let results = try await service.autocomplete(query: term)
 
                     guard !Task.isCancelled else { return }
 
-                    suggestions = results
+                    state = .suggestions(results)
                 } catch {
-                    print(error)
+                    if error is CancellationError {
+                        // Do nothing
+                    } else {
+                        print(error)
+                        state = .error
+                    }
                 }
             }
         }

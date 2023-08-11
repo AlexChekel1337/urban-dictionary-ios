@@ -12,7 +12,7 @@ struct PresentableMessageView: View {
     let text: String
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack {
             Text(emoji)
                 .font(.largeTitle)
             Text(text)
