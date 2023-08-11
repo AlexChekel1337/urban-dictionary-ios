@@ -26,6 +26,7 @@
 		E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */; };
 		E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF22A82C92E00694C29 /* ViewFactory.swift */; };
 		E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
+		E01A5FFC2A866BA000694C29 /* PresentableMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FFB2A866BA000694C29 /* PresentableMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefinitionsView-ViewModel.swift"; sourceTree = "<group>"; };
 		E01A5FF22A82C92E00694C29 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanDictionaryLinkTransformer.swift; sourceTree = "<group>"; };
+		E01A5FFB2A866BA000694C29 /* PresentableMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				E01A5FE72A819C5D00694C29 /* SuggestionView.swift */,
 				E01A5FDC2A817E2E00694C29 /* ActivityIndicatorView.swift */,
 				E01A5FEB2A828D1500694C29 /* ShareSheetView.swift */,
+				E01A5FFB2A866BA000694C29 /* PresentableMessageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				E01A5FD52A811C4F00694C29 /* UrbanDictionaryService.swift in Sources */,
 				E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */,
 				E01A5FD82A811E7500694C29 /* Word.swift in Sources */,
+				E01A5FFC2A866BA000694C29 /* PresentableMessageView.swift in Sources */,
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,

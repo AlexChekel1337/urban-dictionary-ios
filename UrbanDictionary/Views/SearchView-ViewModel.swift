@@ -10,6 +10,14 @@ import SwiftUI
 
 extension SearchView {
     @MainActor class ViewModel: ObservableObject {
+        enum State {
+            case noQuery
+            case loading
+            case suggestions([Suggestion])
+        }
+
+        @Published private(set) var state: State = .suggestions([])
+
         @Published var searchTerm: String = ""
         @Published private(set) var suggestions: [Suggestion] = []
 

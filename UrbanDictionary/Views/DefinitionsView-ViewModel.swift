@@ -22,8 +22,8 @@ extension DefinitionsView {
             switch contents {
                 case .wordsOfTheDay:
                     return "Words of the day"
-                case .definitions:
-                    return "Definitions"
+                case .definitions(let term):
+                    return "Definitions of \"\(term)\""
             }
         }
 
@@ -33,6 +33,15 @@ extension DefinitionsView {
                     return true
                 case .definitions:
                     return false
+            }
+        }
+
+        var shouldUseCompactNavigation: Bool {
+            switch contents {
+                case .wordsOfTheDay:
+                    return false
+                case .definitions:
+                    return true
             }
         }
 

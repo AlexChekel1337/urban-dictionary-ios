@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct WordView: View {
+    @Environment(\.viewFactory) private var viewFactory
+
     @State private var isShareSheetPresented: Bool = false
+    @State private var isDefinitionViewPresented: Bool = false
+    @State private var selectedDefinitionUrl: URL = URL(staticString: "https://apple.com")
 
     let word: Word
 
@@ -18,6 +22,12 @@ struct WordView: View {
 
     var body: some View {
         ZStack {
+            NavigationLink(isActive: $isDefinitionViewPresented) {
+                viewFactory.makeViewForUrl(selectedDefinitionUrl)
+            } label: {
+                EmptyView()
+            }
+
             Rectangle()
                 .foregroundColor(.systemBackground)
                 .cornerRadius(16)
@@ -64,6 +74,11 @@ struct WordView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
+            .environment(\.openURL, OpenURLAction(handler: { url in
+                selectedDefinitionUrl = url
+                isDefinitionViewPresented = true
+                return .handled
+            }))
         }
     }
 }

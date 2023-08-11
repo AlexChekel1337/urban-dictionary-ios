@@ -23,7 +23,7 @@ enum UrbanDictionaryLinkTransformer {
             let matchingGroup = nsString.substring(with: groupRange)
 
             let encodedQuery = matchingGroup.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? matchingGroup
-            let urlString = "https://www.urbandictionary.com/define.php?term=" + encodedQuery
+            let urlString = "https://application/define?term=" + encodedQuery
             let replacementString = "[\(matchingGroup)](\(urlString))"
             mutableString = mutableString.replacingOccurrences(of: matchingString, with: replacementString)
         }

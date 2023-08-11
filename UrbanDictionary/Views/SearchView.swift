@@ -12,8 +12,21 @@ struct SearchView: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.suggestions, id: \.self) { suggestion in
-                SuggestionView(suggestion)
+            switch viewModel.state {
+                case .noQuery:
+                    PresentableMessageView(emoji: "🔍", text: "Enter search request")
+                        .listSectionSeparator(.hidden)
+                case .loading:
+                    ActivityIndicatorView(isAnimating: .constant(true))
+                        .frame(maxWidth: .infinity)
+                        .listSectionSeparator(.hidden)
+                case .suggestions(let suggestions) where suggestions.isEmpty:
+                    PresentableMessageView(emoji: "😔", text: "Nothing found")
+                        .listSectionSeparator(.hidden)
+                case .suggestions(let suggestions):
+                    ForEach(suggestions, id: \.self) { suggestion in
+                        SuggestionView(suggestion)
+                    }
             }
         }
         .listStyle(.plain)

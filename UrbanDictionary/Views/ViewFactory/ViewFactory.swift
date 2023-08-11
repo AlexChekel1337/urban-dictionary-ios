@@ -19,6 +19,26 @@ extension EnvironmentValues {
 }
 
 class ViewFactory {
+    @MainActor func makeViewForUrl(_ url: URL) -> some View {
+        let defaultValue = AnyView(EmptyView())
+
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+            return defaultValue
+        }
+
+        switch components.path {
+            case "/define":
+                guard let term = components.queryItems?.first(where: { $0.name == "term" })?.value else {
+                    return defaultValue
+                }
+
+                let view = makeDefinitionsView(defining: term)
+                return AnyView(view)
+            default:
+                return defaultValue
+        }
+    }
+
     @MainActor func makeWordsOfTheDayView() -> some View {
         let viewModel = DefinitionsView.ViewModel(contents: .wordsOfTheDay)
         let view = DefinitionsView(viewModel: viewModel)

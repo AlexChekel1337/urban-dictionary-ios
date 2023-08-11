@@ -34,6 +34,7 @@ struct DefinitionsView: View {
             }
         }
         .navigationTitle(viewModel.navigationTitle)
+        .navigationBarTitleDisplayMode(viewModel.shouldUseCompactNavigation ? .inline : .automatic)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if viewModel.shouldShowSearch {
