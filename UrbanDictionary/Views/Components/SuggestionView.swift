@@ -17,9 +17,10 @@ struct SuggestionView: View {
     var body: some View {
         VStack {
             Text(suggestion.term)
-                .font(.title2)
                 .frame(maxWidth: .infinity, alignment: .leading)
             Text(suggestion.preview)
+                .font(.footnote)
+                .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
@@ -27,7 +28,13 @@ struct SuggestionView: View {
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        let suggestion = Suggestion(term: "Burger", preview: "Burger means dummy")
-        SuggestionView(suggestion)
+        let suggestion1 = Suggestion(term: "Burger", preview: "Burger means dummy")
+        let suggestion2 = Suggestion(term: "Lorem Ipsum", preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper sagittis posuere. Pellentesque sagittis venenatis est, quis aliquam velit pretium a. Morbi velit velit, bibendum eu blandit sed, fringilla ac augue.")
+
+        List {
+            SuggestionView(suggestion1)
+            SuggestionView(suggestion2)
+        }
+        .listStyle(.plain)
     }
 }

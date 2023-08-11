@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Environment(\.viewFactory) private var viewFactory
+
     @StateObject var viewModel: ViewModel
 
     var body: some View {
@@ -28,7 +30,11 @@ struct SearchView: View {
                         .listSectionSeparator(.hidden)
                 case .suggestions(let suggestions):
                     ForEach(suggestions, id: \.self) { suggestion in
-                        SuggestionView(suggestion)
+                        NavigationLink {
+                            viewFactory.makeDefinitionsView(defining: suggestion.term)
+                        } label: {
+                            SuggestionView(suggestion)
+                        }
                     }
             }
         }
