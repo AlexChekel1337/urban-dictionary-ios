@@ -25,6 +25,7 @@
 		E01A5FEE2A82C29C00694C29 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */; };
 		E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */; };
 		E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF22A82C92E00694C29 /* ViewFactory.swift */; };
+		E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
 		E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefinitionsView-ViewModel.swift"; sourceTree = "<group>"; };
 		E01A5FF22A82C92E00694C29 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanDictionaryLinkTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		E01A5FD32A811C3C00694C29 /* UrbanDictionaryService */ = {
 			isa = PBXGroup;
 			children = (
+				E01A5FF62A86452400694C29 /* Transformers */,
 				E01A5FD62A811C7600694C29 /* Models */,
 				E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */,
 			);
@@ -171,6 +174,14 @@
 				E01A5FF22A82C92E00694C29 /* ViewFactory.swift */,
 			);
 			path = ViewFactory;
+			sourceTree = "<group>";
+		};
+		E01A5FF62A86452400694C29 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 				E01A5FE82A819C5D00694C29 /* SuggestionView.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
 				E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */,
+				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
 				E01A5FE22A81909600694C29 /* SearchView.swift in Sources */,

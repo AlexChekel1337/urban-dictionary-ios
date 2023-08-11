@@ -46,8 +46,13 @@ struct Word: Codable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.word = try container.decode(String.self, forKey: .word)
-        self.definition = try container.decode(String.self, forKey: .definition)
-        self.example = try container.decode(String.self, forKey: .example)
+
+        let rawDefinition = try container.decode(String.self, forKey: .definition)
+        self.definition = try UrbanDictionaryLinkTransformer.transform(from: rawDefinition)
+
+        let rawExample = try container.decode(String.self, forKey: .example)
+        self.example = try UrbanDictionaryLinkTransformer.transform(from: rawExample)
+
         self.author = try container.decode(String.self, forKey: .author)
         self.thumbsUp = try container.decode(Int.self, forKey: .thumbsUp)
         self.thumbsDown = try container.decode(Int.self, forKey: .thumbsDown)

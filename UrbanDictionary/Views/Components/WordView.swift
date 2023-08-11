@@ -32,7 +32,7 @@ struct WordView: View {
                     Text("Definition")
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(word.definition)
+                    Text(.init(word.definition))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
@@ -40,7 +40,7 @@ struct WordView: View {
                     Text("Example usage")
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(word.example)
+                    Text(.init(word.example))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
