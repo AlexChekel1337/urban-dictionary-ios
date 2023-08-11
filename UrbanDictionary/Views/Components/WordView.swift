@@ -12,7 +12,7 @@ struct WordView: View {
 
     @State private var isShareSheetPresented: Bool = false
     @State private var isDefinitionViewPresented: Bool = false
-    @State private var selectedDefinitionUrl: URL = URL(staticString: "https://apple.com")
+    @State private var selectedDefinitionUrl: URL = .nonExistentUrl
 
     let word: Word
 

@@ -8,6 +8,8 @@
 import Foundation
 
 extension URL {
+    static let nonExistentUrl: URL = .init(staticString: "https://nonexistenturl.xyz")
+
     init(staticString: StaticString) {
         self.init(string: "\(staticString)")!
     }
