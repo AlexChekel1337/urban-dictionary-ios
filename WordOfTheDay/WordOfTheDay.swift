@@ -8,34 +8,74 @@
 import WidgetKit
 import SwiftUI
 
+struct WordEntry: TimelineEntry {
+    var date: Date
+    var word: String
+    var definition: String
+    var isPlaceholder: Bool
+}
+
+extension WordEntry {
+    static let placeholder = WordEntry(
+        date: Date(),
+        word: "iPhone",
+        definition: "A device that gets bigger every year",
+        isPlaceholder: true
+    )
+}
+
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    private let service = UrbanDictionaryService()
+
+    func placeholder(in context: Context) -> WordEntry {
+        WordEntry.placeholder
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (WordEntry) -> ()) {
+        Task {
+            do {
+                let results = try await service.wordsOfTheDay()
+                let wordOfTheDay = results[0]
+
+                let entry = WordEntry(
+                    date: Date(),
+                    word: wordOfTheDay.word,
+                    definition: wordOfTheDay.definition,
+                    isPlaceholder: false
+                )
+                completion(entry)
+            } catch {
+                print(error)
+                completion(WordEntry.placeholder)
+            }
+        }
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        Task {
+            var entries = [WordEntry]()
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
+            do {
+                let results = try await service.wordsOfTheDay()
+                let wordOfTheDay = results[0]
+
+                let entry = WordEntry(
+                    date: Date(),
+                    word: wordOfTheDay.word,
+                    definition: wordOfTheDay.definition,
+                    isPlaceholder: false
+                )
+                entries.append(entry)
+            } catch {
+                print(error)
+                entries.append(WordEntry.placeholder)
+            }
+
+            let fourHourBreak = Date().addingTimeInterval(4 * 60 * 60)
+            let timeline = Timeline(entries: entries, policy: .after(fourHourBreak))
+            completion(timeline)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
 }
 
 struct WordOfTheDayEntryView : View {
@@ -43,16 +83,18 @@ struct WordOfTheDayEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Fr")
+            Text(.init(entry.word))
                 .font(.title)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .redacted(reason: .placeholder)
+                .redacted(reason: entry.isPlaceholder ? .placeholder : [])
+                .tint(.primary)
             Spacer()
-            Text("An even shorter form of 'for real'. The seemingly new way that under 30's tend to reply to social media posts in agreement to it.")
+            Text(.init(entry.definition))
                 .font(.caption)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .redacted(reason: .placeholder)
+                .redacted(reason: entry.isPlaceholder ? .placeholder : [])
+                .tint(.primary)
         }
         .padding()
     }
@@ -65,6 +107,7 @@ struct WordOfTheDay: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WordOfTheDayEntryView(entry: entry)
         }
+        .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Word of the day")
         .description("Displays word of the day on Urban Dictionary")
     }
@@ -72,7 +115,16 @@ struct WordOfTheDay: Widget {
 
 struct WordOfTheDay_Previews: PreviewProvider {
     static var previews: some View {
-        WordOfTheDayEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        var entry = WordEntry.placeholder
+        entry.isPlaceholder = false
+
+        return Group {
+            WordOfTheDayEntryView(entry: entry)
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .previewDisplayName(".systemSmall")
+            WordOfTheDayEntryView(entry: entry)
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+                .previewDisplayName(".systemMedium")
+        }
     }
 }

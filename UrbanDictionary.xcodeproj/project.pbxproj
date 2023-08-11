@@ -38,8 +38,6 @@
 		E01A601A2A86CC9800694C29 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
 		E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
 		E01A601C2A86CC9D00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
-		E01A601E2A86D15300694C29 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A601D2A86D15300694C29 /* Provider.swift */; };
-		E01A60202A86D1A000694C29 /* WordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A601F2A86D1A000694C29 /* WordEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +93,6 @@
 		E01A600C2A86CC5900694C29 /* WordOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOfTheDay.swift; sourceTree = "<group>"; };
 		E01A600E2A86CC5B00694C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01A60102A86CC5B00694C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E01A601D2A86D15300694C29 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		E01A601F2A86D1A000694C29 /* WordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,8 +253,6 @@
 		E01A60092A86CC5900694C29 /* WordOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
-				E01A601D2A86D15300694C29 /* Provider.swift */,
-				E01A601F2A86D1A000694C29 /* WordEntry.swift */,
 				E01A600A2A86CC5900694C29 /* WordOfTheDayBundle.swift */,
 				E01A600C2A86CC5900694C29 /* WordOfTheDay.swift */,
 				E01A600E2A86CC5B00694C29 /* Assets.xcassets */,
@@ -395,10 +389,8 @@
 			files = (
 				E01A601C2A86CC9D00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E01A600B2A86CC5900694C29 /* WordOfTheDayBundle.swift in Sources */,
-				E01A60202A86D1A000694C29 /* WordEntry.swift in Sources */,
 				E01A600D2A86CC5900694C29 /* WordOfTheDay.swift in Sources */,
 				E01A601A2A86CC9800694C29 /* Word.swift in Sources */,
-				E01A601E2A86D15300694C29 /* Provider.swift in Sources */,
 				E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */,
 				E01A60182A86CC8E00694C29 /* HTTPClient.swift in Sources */,
 				E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */,
