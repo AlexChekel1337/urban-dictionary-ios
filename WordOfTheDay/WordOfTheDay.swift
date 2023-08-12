@@ -89,6 +89,7 @@ struct WordOfTheDayEntryView : View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .redacted(reason: entry.isPlaceholder ? .placeholder : [])
                 .tint(.primary)
+                .layoutPriority(1)
             Spacer()
             Text(.init(entry.definition))
                 .font(.caption)
