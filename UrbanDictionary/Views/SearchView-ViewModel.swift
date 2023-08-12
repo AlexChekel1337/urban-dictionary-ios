@@ -33,7 +33,9 @@ extension SearchView {
 
         private func performSearch(for term: String) {
             guard !term.isEmpty else {
-                return state = .noQuery
+                currentTask?.cancel()
+                state = .noQuery
+                return
             }
 
             state = .loading
