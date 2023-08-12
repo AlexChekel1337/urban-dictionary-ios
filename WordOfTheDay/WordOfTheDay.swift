@@ -71,8 +71,8 @@ struct Provider: TimelineProvider {
                 entries.append(WordEntry.placeholder)
             }
 
-            let fourHourBreak = Date().addingTimeInterval(4 * 60 * 60)
-            let timeline = Timeline(entries: entries, policy: .after(fourHourBreak))
+            let updateInterval = Date().addingTimeInterval(60 * 60)
+            let timeline = Timeline(entries: entries, policy: .after(updateInterval))
             completion(timeline)
         }
     }
