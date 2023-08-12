@@ -25,6 +25,13 @@ class UrbanDictionaryService {
         return response.list
     }
 
+    func randomWords(page: Int = 1) async throws -> [Word] {
+        let parameters = ["page": "\(page)"]
+        let response: ListResponse<Word> = try await client.get(path: "/v0/random", parameters: parameters)
+
+        return response.list
+    }
+
     func define(_ term: String, page: Int = 1) async throws -> [Word] {
         let parameters = [
             "term": term,
