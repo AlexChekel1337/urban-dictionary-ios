@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// TODOs:
+// - Opening definition view from a widget will only word once, until the definition view is dismissed
+
 @main
 struct UrbanDictionaryApp: App {
     @Environment(\.viewFactory) private var viewFactory
