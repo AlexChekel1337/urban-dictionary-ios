@@ -37,7 +37,20 @@
 		E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */; };
 		E01A601A2A86CC9800694C29 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
 		E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
-		E01A601C2A86CC9D00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
+		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
+		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
+		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
+		E0D254392A88FA2400186BA0 /* RandomWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254382A88FA2400186BA0 /* RandomWord.swift */; };
+		E0D2543B2A88FA2500186BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2543A2A88FA2500186BA0 /* Assets.xcassets */; };
+		E0D2543F2A88FA2500186BA0 /* RandomWordExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E0D254432A88FA4D00186BA0 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FCB2A8119CD00694C29 /* HTTPClient.swift */; };
+		E0D254442A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
+		E0D254452A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FF72A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift */; };
+		E0D254462A88FA5A00186BA0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
+		E0D254472A88FA5D00186BA0 /* UrbanDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */; };
+		E0D254482A88FA5F00186BA0 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
+		E0D2544A2A8957A500186BA0 /* DefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254492A8957A500186BA0 /* DefinitionView.swift */; };
+		E0D2544C2A8957BC00186BA0 /* DefinitionView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2544B2A8957BC00186BA0 /* DefinitionView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +60,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E01A60022A86CC5900694C29;
 			remoteInfo = WordOfTheDayExtension;
+		};
+		E0D2543D2A88FA2500186BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01A5FB12A81113B00694C29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0D254312A88FA2400186BA0;
+			remoteInfo = RandomWordExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,6 +78,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				E01A60132A86CC5B00694C29 /* WordOfTheDayExtension.appex in Embed Foundation Extensions */,
+				E0D2543F2A88FA2500186BA0 /* RandomWordExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +114,13 @@
 		E01A600C2A86CC5900694C29 /* WordOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOfTheDay.swift; sourceTree = "<group>"; };
 		E01A600E2A86CC5B00694C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01A60102A86CC5B00694C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordBundle.swift; sourceTree = "<group>"; };
+		E0D254382A88FA2400186BA0 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
+		E0D2543A2A88FA2500186BA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0D2543C2A88FA2500186BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D254492A8957A500186BA0 /* DefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionView.swift; sourceTree = "<group>"; };
+		E0D2544B2A8957BC00186BA0 /* DefinitionView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefinitionView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +140,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0D2542F2A88FA2400186BA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */,
+				E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,6 +157,7 @@
 			children = (
 				E01A5FBB2A81113C00694C29 /* UrbanDictionary */,
 				E01A60092A86CC5900694C29 /* WordOfTheDay */,
+				E0D254352A88FA2400186BA0 /* RandomWord */,
 				E01A60042A86CC5900694C29 /* Frameworks */,
 				E01A5FBA2A81113C00694C29 /* Products */,
 			);
@@ -130,6 +168,7 @@
 			children = (
 				E01A5FB92A81113C00694C29 /* UrbanDictionary.app */,
 				E01A60032A86CC5900694C29 /* WordOfTheDayExtension.appex */,
+				E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +208,8 @@
 			children = (
 				E01A5FF12A82C92100694C29 /* ViewFactory */,
 				E01A5FD92A81273F00694C29 /* Components */,
+				E0D254492A8957A500186BA0 /* DefinitionView.swift */,
+				E0D2544B2A8957BC00186BA0 /* DefinitionView-ViewModel.swift */,
 				E01A5FED2A82C29C00694C29 /* DefinitionsView.swift */,
 				E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */,
 				E01A5FE12A81909600694C29 /* SearchView.swift */,
@@ -261,6 +302,17 @@
 			path = WordOfTheDay;
 			sourceTree = "<group>";
 		};
+		E0D254352A88FA2400186BA0 /* RandomWord */ = {
+			isa = PBXGroup;
+			children = (
+				E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */,
+				E0D254382A88FA2400186BA0 /* RandomWord.swift */,
+				E0D2543A2A88FA2500186BA0 /* Assets.xcassets */,
+				E0D2543C2A88FA2500186BA0 /* Info.plist */,
+			);
+			path = RandomWord;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +329,7 @@
 			);
 			dependencies = (
 				E01A60122A86CC5B00694C29 /* PBXTargetDependency */,
+				E0D2543E2A88FA2500186BA0 /* PBXTargetDependency */,
 			);
 			name = UrbanDictionary;
 			productName = UrbanDictionary;
@@ -300,6 +353,23 @@
 			productReference = E01A60032A86CC5900694C29 /* WordOfTheDayExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E0D254312A88FA2400186BA0 /* RandomWordExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0D254422A88FA2500186BA0 /* Build configuration list for PBXNativeTarget "RandomWordExtension" */;
+			buildPhases = (
+				E0D2542E2A88FA2400186BA0 /* Sources */,
+				E0D2542F2A88FA2400186BA0 /* Frameworks */,
+				E0D254302A88FA2400186BA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomWordExtension;
+			productName = RandomWordExtension;
+			productReference = E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -314,6 +384,9 @@
 						CreatedOnToolsVersion = 14.1;
 					};
 					E01A60022A86CC5900694C29 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					E0D254312A88FA2400186BA0 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -333,6 +406,7 @@
 			targets = (
 				E01A5FB82A81113C00694C29 /* UrbanDictionary */,
 				E01A60022A86CC5900694C29 /* WordOfTheDayExtension */,
+				E0D254312A88FA2400186BA0 /* RandomWordExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +429,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0D254302A88FA2400186BA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D2543B2A88FA2500186BA0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,11 +444,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D2544A2A8957A500186BA0 /* DefinitionView.swift in Sources */,
 				E01A5FDB2A81275D00694C29 /* WordView.swift in Sources */,
 				E01A5FD52A811C4F00694C29 /* UrbanDictionaryService.swift in Sources */,
 				E01A5FF02A82C2BF00694C29 /* DefinitionsView-ViewModel.swift in Sources */,
 				E01A5FD82A811E7500694C29 /* Word.swift in Sources */,
 				E01A5FFC2A866BA000694C29 /* PresentableMessageView.swift in Sources */,
+				E0D2544C2A8957BC00186BA0 /* DefinitionView-ViewModel.swift in Sources */,
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
@@ -387,13 +471,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01A601C2A86CC9D00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
+				E0D254442A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E01A600B2A86CC5900694C29 /* WordOfTheDayBundle.swift in Sources */,
 				E01A600D2A86CC5900694C29 /* WordOfTheDay.swift in Sources */,
 				E01A601A2A86CC9800694C29 /* Word.swift in Sources */,
 				E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */,
 				E01A60182A86CC8E00694C29 /* HTTPClient.swift in Sources */,
 				E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0D2542E2A88FA2400186BA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D254472A88FA5D00186BA0 /* UrbanDictionaryService.swift in Sources */,
+				E0D254392A88FA2400186BA0 /* RandomWord.swift in Sources */,
+				E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */,
+				E0D254462A88FA5A00186BA0 /* Word.swift in Sources */,
+				E0D254452A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */,
+				E0D254482A88FA5F00186BA0 /* Suggestion.swift in Sources */,
+				E0D254432A88FA4D00186BA0 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +502,11 @@
 			isa = PBXTargetDependency;
 			target = E01A60022A86CC5900694C29 /* WordOfTheDayExtension */;
 			targetProxy = E01A60112A86CC5B00694C29 /* PBXContainerItemProxy */;
+		};
+		E0D2543E2A88FA2500186BA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0D254312A88FA2400186BA0 /* RandomWordExtension */;
+			targetProxy = E0D2543D2A88FA2500186BA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -648,6 +751,62 @@
 			};
 			name = Release;
 		};
+		E0D254402A88FA2500186BA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = DDL2W3NY34;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomWord/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomWord;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chekel.UrbanDictionary.RandomWord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0D254412A88FA2500186BA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = DDL2W3NY34;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomWord/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomWord;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chekel.UrbanDictionary.RandomWord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,6 +833,15 @@
 			buildConfigurations = (
 				E01A60152A86CC5B00694C29 /* Debug */,
 				E01A60162A86CC5B00694C29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0D254422A88FA2500186BA0 /* Build configuration list for PBXNativeTarget "RandomWordExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0D254402A88FA2500186BA0 /* Debug */,
+				E0D254412A88FA2500186BA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

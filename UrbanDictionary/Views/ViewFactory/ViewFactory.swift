@@ -51,6 +51,12 @@ class ViewFactory {
         return view
     }
 
+    @MainActor func makeDefinitionView(showing word: Word) -> some View {
+        let viewModel = DefinitionView.ViewModel(word: word)
+        let view = DefinitionView(viewModel: viewModel)
+        return view
+    }
+
     @MainActor func makeSearchView() -> some View {
         let viewModel = SearchView.ViewModel()
         let view = SearchView(viewModel: viewModel)

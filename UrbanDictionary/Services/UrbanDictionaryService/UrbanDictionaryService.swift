@@ -15,6 +15,10 @@ private struct ResultsResponse<T: Codable>: Codable {
     let results: [T]
 }
 
+enum UrbanDictionaryServiceError: Error {
+    case notFound
+}
+
 class UrbanDictionaryService {
     private let client: HTTPClient = .init(baseUrl: "https://api.urbandictionary.com")
 
@@ -41,6 +45,17 @@ class UrbanDictionaryService {
         let response: ListResponse<Word> = try await client.get(path: "/v0/define", parameters: parameters)
 
         return response.list
+    }
+
+    func definition(id: String) async throws -> Word {
+        let parameters = ["defid": id]
+        let response: ListResponse<Word> = try await client.get(path: "/v0/define", parameters: parameters)
+
+        if let word = response.list.first {
+            return word
+        } else {
+            throw UrbanDictionaryServiceError.notFound
+        }
     }
 
     func autocomplete(query: String) async throws -> [Suggestion] {
