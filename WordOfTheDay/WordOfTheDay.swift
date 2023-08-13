@@ -12,6 +12,7 @@ struct WordEntry: TimelineEntry {
     var date: Date
     var word: String
     var definition: String
+    var id: Int
     var isPlaceholder: Bool
 }
 
@@ -20,6 +21,7 @@ extension WordEntry {
         date: Date(),
         word: "iPhone",
         definition: "A device that gets bigger every year",
+        id: 0,
         isPlaceholder: true
     )
 }
@@ -41,6 +43,7 @@ struct Provider: TimelineProvider {
                     date: Date(),
                     word: wordOfTheDay.word,
                     definition: wordOfTheDay.definition,
+                    id: wordOfTheDay.id,
                     isPlaceholder: false
                 )
                 completion(entry)
@@ -63,6 +66,7 @@ struct Provider: TimelineProvider {
                     date: Date(),
                     word: wordOfTheDay.word,
                     definition: wordOfTheDay.definition,
+                    id: wordOfTheDay.id,
                     isPlaceholder: false
                 )
                 entries.append(entry)
@@ -103,6 +107,7 @@ struct WordOfTheDayEntryView : View {
                 .tint(.primary)
         }
         .padding()
+        .widgetURL(URL(string: "https://application/definition?id=\(entry.id)"))
     }
 }
 
