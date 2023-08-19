@@ -87,7 +87,7 @@ struct WordOfTheDayEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Word of the day")
+            Text("widget_word_of_the_day_title")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,8 +119,8 @@ struct WordOfTheDay: Widget {
             WordOfTheDayEntryView(entry: entry)
         }
         .supportedFamilies([.systemSmall, .systemMedium])
-        .configurationDisplayName("Word of the day")
-        .description("Displays word of the day on Urban Dictionary")
+        .configurationDisplayName("widget_word_of_the_day_title")
+        .description("widget_word_of_the_date_description")
     }
 }
 

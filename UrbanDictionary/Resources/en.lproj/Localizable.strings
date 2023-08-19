@@ -1,0 +1,14 @@
+"definition_title" = "Definition";
+"definitions_of_title" = "Definitions of \"%@\"";
+"search_text_field_prompt" = "Search definitions";
+"search_message_enter_query" = "Enter search request";
+"search_message_error" = "An error occurred";
+"search_message_no_results" = "Nothing found";
+"search_title" = "Search";
+"widget_random_word_description" = "Displays random word from Urban Dictionary every hour";
+"widget_random_word_title" = "Random word";
+"widget_word_of_the_date_description" = "Displays word of the day on Urban Dictionary";
+"widget_word_of_the_day_title" = "Word of the day";
+"word_definition" = "Definition";
+"word_example_usage" = "Example usage";
+"words_of_the_day_title" = "Words of the day";

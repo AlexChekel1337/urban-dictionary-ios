@@ -1,0 +1,14 @@
+"definition_title" = "Значение";
+"definitions_of_title" = "Значения \"%@\"";
+"search_text_field_prompt" = "Поиск по значениям";
+"search_message_enter_query" = "Введите поисковой запрос";
+"search_message_error" = "Возникла ошибка";
+"search_message_no_results" = "Ничего не нашлось";
+"search_title" = "Поиск";
+"widget_random_word_description" = "Показывает случайное слово из Urban Dictionary каждый час";
+"widget_random_word_title" = "Случайное слово";
+"widget_word_of_the_date_description" = "Показывает слово дня на Urban Dictionary";
+"widget_word_of_the_day_title" = "Слово дня";
+"word_definition" = "Значение";
+"word_example_usage" = "Пример использования";
+"words_of_the_day_title" = "Слова дня";

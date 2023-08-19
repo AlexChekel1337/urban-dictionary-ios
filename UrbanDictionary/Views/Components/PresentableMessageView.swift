@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PresentableMessageView: View {
-    let emoji: String
-    let text: String
+    let emoji: LocalizedStringKey
+    let text: LocalizedStringKey
 
     var body: some View {
         VStack {

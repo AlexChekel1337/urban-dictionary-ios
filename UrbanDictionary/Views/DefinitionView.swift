@@ -22,7 +22,7 @@ struct DefinitionView: View {
                 .padding()
             }
         }
-        .navigationTitle("Word")
+        .navigationTitle("definition_title")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -39,6 +39,8 @@ struct DefinitionView_Previews: PreviewProvider {
             thumbsDown: 23,
             permalink: .nonExistentUrl
         )
-        DefinitionView(viewModel: .init(word: word))
+        NavigationView {
+            DefinitionView(viewModel: .init(word: word))
+        }
     }
 }

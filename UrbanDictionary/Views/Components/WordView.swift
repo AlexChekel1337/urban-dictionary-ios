@@ -39,7 +39,7 @@ struct WordView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 VStack {
-                    Text("Definition")
+                    Text("word_definition")
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(.init(word.definition))
@@ -47,7 +47,7 @@ struct WordView: View {
                 }
 
                 VStack {
-                    Text("Example usage")
+                    Text("word_example_usage")
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(.init(word.example))

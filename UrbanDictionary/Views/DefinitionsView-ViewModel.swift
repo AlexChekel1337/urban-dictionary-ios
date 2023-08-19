@@ -21,9 +21,9 @@ extension DefinitionsView {
         var navigationTitle: String {
             switch contents {
                 case .wordsOfTheDay:
-                    return "Words of the day"
+                    return LocalizedString("words_of_the_day_title")
                 case .definitions(let term):
-                    return "Definitions of \"\(term)\""
+                    return String(format: LocalizedString("definitions_of_title"), term)
             }
         }
 

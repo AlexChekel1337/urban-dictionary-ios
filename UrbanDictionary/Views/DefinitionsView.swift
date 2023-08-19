@@ -51,6 +51,8 @@ struct DefinitionsView: View {
 
 struct DefinitionsView_Previews: PreviewProvider {
     static var previews: some View {
-        DefinitionsView(viewModel: .init(contents: .wordsOfTheDay))
+        NavigationView {
+            DefinitionsView(viewModel: .init(contents: .wordsOfTheDay))
+        }
     }
 }

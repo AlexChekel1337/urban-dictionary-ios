@@ -16,17 +16,17 @@ struct SearchView: View {
         List {
             switch viewModel.state {
                 case .noQuery:
-                    PresentableMessageView(emoji: "🔍", text: "Enter search request")
+                    PresentableMessageView(emoji: "🔍", text: "search_message_enter_query")
                         .listSectionSeparator(.hidden)
                 case .loading:
                     ActivityIndicatorView(isAnimating: .constant(true))
                         .frame(maxWidth: .infinity)
                         .listSectionSeparator(.hidden)
                 case .error:
-                    PresentableMessageView(emoji: "🚧", text: "An error occurred")
+                    PresentableMessageView(emoji: "🚧", text: "search_message_error")
                         .listSectionSeparator(.hidden)
                 case .suggestions(let suggestions) where suggestions.isEmpty:
-                    PresentableMessageView(emoji: "😔", text: "Nothing found")
+                    PresentableMessageView(emoji: "😔", text: "search_message_no_results")
                         .listSectionSeparator(.hidden)
                 case .suggestions(let suggestions):
                     ForEach(suggestions, id: \.self) { suggestion in
@@ -39,12 +39,12 @@ struct SearchView: View {
             }
         }
         .listStyle(.plain)
-        .navigationTitle("Search")
+        .navigationTitle("search_title")
         .navigationBarTitleDisplayMode(.inline)
         .searchable(
             text: $viewModel.searchTerm,
             placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search definitions"
+            prompt: "search_text_field_prompt"
         )
     }
 }

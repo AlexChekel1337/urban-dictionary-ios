@@ -87,7 +87,7 @@ struct RandomWordEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Random word")
+            Text("widget_random_word_title")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,8 +119,8 @@ struct RandomWord: Widget {
             RandomWordEntryView(entry: entry)
         }
         .supportedFamilies([.systemSmall, .systemMedium])
-        .configurationDisplayName("Random word")
-        .description("Displays random word from Urban Dictionary every hour")
+        .configurationDisplayName("widget_random_word_title")
+        .description("widget_random_word_description")
     }
 }
 

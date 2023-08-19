@@ -37,6 +37,10 @@
 		E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD42A811C4F00694C29 /* UrbanDictionaryService.swift */; };
 		E01A601A2A86CC9800694C29 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
 		E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
+		E0371BF82A90CF7B00573042 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0371BFC2A90CF7B00573042 /* Localizable.strings */; };
+		E0371BF92A90CF7B00573042 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0371BFC2A90CF7B00573042 /* Localizable.strings */; };
+		E0371BFA2A90CF7B00573042 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0371BFC2A90CF7B00573042 /* Localizable.strings */; };
+		E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0371BFE2A90D11100573042 /* LocalizedString.swift */; };
 		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
 		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
 		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
@@ -114,6 +118,9 @@
 		E01A600C2A86CC5900694C29 /* WordOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOfTheDay.swift; sourceTree = "<group>"; };
 		E01A600E2A86CC5B00694C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01A60102A86CC5B00694C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0371BFB2A90CF7B00573042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E0371BFD2A90CF7D00573042 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E0371BFE2A90D11100573042 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordBundle.swift; sourceTree = "<group>"; };
 		E0D254382A88FA2400186BA0 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
@@ -176,12 +183,12 @@
 		E01A5FBB2A81113C00694C29 /* UrbanDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				E0371BF32A90CEC900573042 /* Resources */,
 				E01A5FDE2A81896200694C29 /* Helpers */,
 				E01A5FD22A811C3800694C29 /* Services */,
 				E01A5FCD2A811A4F00694C29 /* Views */,
 				E01A5FCA2A8119C400694C29 /* HTTPClient */,
 				E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */,
-				E01A5FC02A81113C00694C29 /* Assets.xcassets */,
 				E01A5FC22A81113C00694C29 /* Preview Content */,
 			);
 			path = UrbanDictionary;
@@ -262,6 +269,7 @@
 			children = (
 				E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */,
 				E01A5FE92A8285EC00694C29 /* URL+StaticString.swift */,
+				E0371BFE2A90D11100573042 /* LocalizedString.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +308,15 @@
 				E01A60102A86CC5B00694C29 /* Info.plist */,
 			);
 			path = WordOfTheDay;
+			sourceTree = "<group>";
+		};
+		E0371BF32A90CEC900573042 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E01A5FC02A81113C00694C29 /* Assets.xcassets */,
+				E0371BFC2A90CF7B00573042 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E0D254352A88FA2400186BA0 /* RandomWord */ = {
@@ -397,7 +414,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = E01A5FB02A81113B00694C29;
 			productRefGroup = E01A5FBA2A81113C00694C29 /* Products */;
@@ -417,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01A5FC42A81113C00694C29 /* Preview Assets.xcassets in Resources */,
+				E0371BF82A90CF7B00573042 /* Localizable.strings in Resources */,
 				E01A5FC12A81113C00694C29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01A600F2A86CC5B00694C29 /* Assets.xcassets in Resources */,
+				E0371BF92A90CF7B00573042 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D2543B2A88FA2500186BA0 /* Assets.xcassets in Resources */,
+				E0371BFA2A90CF7B00573042 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +481,7 @@
 				E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */,
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
+				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
 				E01A5FE22A81909600694C29 /* SearchView.swift in Sources */,
 				E01A5FE42A8190A200694C29 /* SearchView-ViewModel.swift in Sources */,
@@ -509,6 +530,18 @@
 			targetProxy = E0D2543D2A88FA2500186BA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0371BFC2A90CF7B00573042 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0371BFB2A90CF7B00573042 /* en */,
+				E0371BFD2A90CF7D00573042 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E01A5FC52A81113C00694C29 /* Debug */ = {
@@ -561,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -615,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
