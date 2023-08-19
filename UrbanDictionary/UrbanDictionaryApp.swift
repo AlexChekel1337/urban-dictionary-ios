@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+// TODOs:
+// - Fix old icon being displayed at lower resolutions
+// - iPad and/or macOS support
+
 @main
 struct UrbanDictionaryApp: App {
     @Environment(\.viewFactory) private var viewFactory
@@ -45,6 +49,7 @@ struct UrbanDictionaryApp: App {
             return
         }
 
+        let shouldWait = isDefinitionViewPresented
         isDefinitionViewPresented = false
 
         Task {
@@ -52,11 +57,14 @@ struct UrbanDictionaryApp: App {
                 let service = UrbanDictionaryService()
                 let word = try await service.definition(id: id)
 
-                // Wait for one second before presenting the view again,
-                // otherwise nothing will happen after dismissal of
-                // already presented view. Will be fixed by replacing
-                // NavigationView with NavigationStack later.
-                try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
+                if shouldWait {
+                    // If definition view was already presented, then
+                    // task should be delayed for some time to allow
+                    // pop animation to finish. If there's no delay,
+                    // pop animation will prevent app from presenting
+                    // this view again.
+                    try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
+                }
 
                 wordDefinition = word
                 isDefinitionViewPresented = true
