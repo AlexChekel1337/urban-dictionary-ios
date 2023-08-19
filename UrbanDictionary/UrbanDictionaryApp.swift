@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-// TODOs:
-// - Opening definition view from a widget will only word once, until the definition view is dismissed
-
 @main
 struct UrbanDictionaryApp: App {
     @Environment(\.viewFactory) private var viewFactory
@@ -48,10 +45,18 @@ struct UrbanDictionaryApp: App {
             return
         }
 
+        isDefinitionViewPresented = false
+
         Task {
             do {
                 let service = UrbanDictionaryService()
                 let word = try await service.definition(id: id)
+
+                // Wait for one second before presenting the view again,
+                // otherwise nothing will happen after dismissal of
+                // already presented view. Will be fixed by replacing
+                // NavigationView with NavigationStack later.
+                try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
 
                 wordDefinition = word
                 isDefinitionViewPresented = true
