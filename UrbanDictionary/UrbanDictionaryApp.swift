@@ -9,6 +9,7 @@ import SwiftUI
 
 // TODOs:
 // - Fix old icon being displayed at lower resolutions
+// - Favorite definitions (saved locally???)
 // - iPad and/or macOS support
 
 @main
