@@ -29,7 +29,7 @@ struct WordView: View {
             }
 
             Rectangle()
-                .foregroundColor(.systemBackground)
+                .foregroundColor(.secondarySystemGrouppedBackground)
                 .cornerRadius(16)
 
             VStack(spacing: 16) {

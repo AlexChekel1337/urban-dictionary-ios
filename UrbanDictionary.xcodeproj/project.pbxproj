@@ -41,6 +41,8 @@
 		E0371BF92A90CF7B00573042 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0371BFC2A90CF7B00573042 /* Localizable.strings */; };
 		E0371BFA2A90CF7B00573042 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0371BFC2A90CF7B00573042 /* Localizable.strings */; };
 		E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0371BFE2A90D11100573042 /* LocalizedString.swift */; };
+		E0867D7B2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
+		E0867D7C2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
 		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
 		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
 		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
@@ -497,6 +499,7 @@
 				E01A600D2A86CC5900694C29 /* WordOfTheDay.swift in Sources */,
 				E01A601A2A86CC9800694C29 /* Word.swift in Sources */,
 				E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */,
+				E0867D7B2A92B27D00308CF1 /* Color+UIColor.swift in Sources */,
 				E01A60182A86CC8E00694C29 /* HTTPClient.swift in Sources */,
 				E01A601B2A86CC9B00694C29 /* Suggestion.swift in Sources */,
 			);
@@ -511,6 +514,7 @@
 				E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */,
 				E0D254462A88FA5A00186BA0 /* Word.swift in Sources */,
 				E0D254452A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */,
+				E0867D7C2A92B27D00308CF1 /* Color+UIColor.swift in Sources */,
 				E0D254482A88FA5F00186BA0 /* Suggestion.swift in Sources */,
 				E0D254432A88FA4D00186BA0 /* HTTPClient.swift in Sources */,
 			);
