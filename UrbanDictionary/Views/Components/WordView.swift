@@ -93,7 +93,8 @@ struct WordView_Previews: PreviewProvider {
             author: "A very long author field that will probably be clipped",
             thumbsUp: 10456,
             thumbsDown: 1876,
-            permalink: .init(staticString: "https://google.com")
+            permalink: .init(staticString: "https://google.com"),
+            writtenOn: Date()
         )
         WordView(word)
     }

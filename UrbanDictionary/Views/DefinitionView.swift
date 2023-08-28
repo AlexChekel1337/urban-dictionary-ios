@@ -37,7 +37,8 @@ struct DefinitionView_Previews: PreviewProvider {
             author: "Author",
             thumbsUp: 123,
             thumbsDown: 23,
-            permalink: .nonExistentUrl
+            permalink: .nonExistentUrl,
+            writtenOn: Date()
         )
         NavigationView {
             DefinitionView(viewModel: .init(word: word))
