@@ -8,8 +8,8 @@
 import SwiftUI
 
 // TODOs:
-// [ ] Accessory views for root screen
-// [ ] Implement reusable and customizable error view with retry button
+// [X] Implement reusable and customizable error view with retry button
+// [ ] Fix NSURLErrorCancelled error being thrown whenever I cancel the current Task
 // [ ] Figure out a way to introduce a delay when retry button is tapped
 // [ ] Inline search support in aforementioned view
 // [ ] Background updates once in a while to keep the view in sync

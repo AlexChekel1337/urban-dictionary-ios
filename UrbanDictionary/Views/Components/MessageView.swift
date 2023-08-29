@@ -8,29 +8,87 @@
 import SwiftUI
 
 struct MessageView: View {
-    private let tapHandler: () -> Void
+    enum Kind {
+        case error
+        case custom(emoji: String)
+    }
 
-    init(tapHandler: @escaping () -> Void) {
-        self.tapHandler = tapHandler
+    private let kind: Kind
+    private let title: LocalizedStringKey
+    private let text: LocalizedStringKey?
+    private let actionButtonTitle: LocalizedStringKey?
+    private let actionHandler: (() -> Void)?
+
+    init(
+        kind: Kind,
+        title: LocalizedStringKey,
+        text: LocalizedStringKey? = nil,
+        actionButtonTitle: LocalizedStringKey? = nil,
+        actionHandler: (() -> Void)? = nil
+    ) {
+        self.kind = kind
+        self.title = title
+        self.text = text
+        self.actionButtonTitle = actionButtonTitle
+        self.actionHandler = actionHandler
     }
 
     var body: some View {
-        VStack {
-            Text("⚠️")
+        VStack(spacing: 16) {
+            Text(kind.emoji)
                 .font(.largeTitle)
-            Text("An error occurred!")
-                .foregroundColor(.secondary)
-            Button("Retry") {
-                tapHandler()
+
+            VStack {
+                Text(title)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+
+                if let text {
+                    Text(text)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+
+            if let actionButtonTitle {
+                Button(actionButtonTitle) {
+                    actionHandler?()
+                }
             }
         }
         .padding()
-        .frame(maxWidth: .infinity, alignment: .center)
+    }
+}
+
+private extension MessageView.Kind {
+    var emoji: String {
+        switch self {
+            case .error:
+                return "⚠️"
+            case .custom(let emoji):
+                return emoji
+        }
     }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView { }
+        Group {
+            MessageView(
+                kind: .error,
+                title: "Something went wrong",
+                text: "An error occurred while loading the data",
+                actionButtonTitle: "Retry"
+            )
+            .previewDisplayName("Error")
+
+            MessageView(
+                kind: .custom(emoji: "🪵"),
+                title: "This is an example logging message title",
+                text: "This is an example logging message text",
+                actionButtonTitle: "Continue"
+            )
+            .previewDisplayName("Custom")
+        }
     }
 }

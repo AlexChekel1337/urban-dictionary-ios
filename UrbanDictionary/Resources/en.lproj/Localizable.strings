@@ -1,5 +1,8 @@
 "definition_title" = "Definition";
 "definitions_of_title" = "Definitions of \"%@\"";
+"error_loading_title" = "Something went wrong";
+"error_loading_text" = "An error occurred while loading data";
+"error_loading_action" = "Retry";
 "search_text_field_prompt" = "Search definitions";
 "search_message_enter_query" = "Enter search request";
 "search_message_error" = "An error occurred";

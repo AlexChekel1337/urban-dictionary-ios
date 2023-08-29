@@ -22,7 +22,12 @@ struct DefinitionListView: View {
                     }
 
                     if viewModel.hasError {
-                        MessageView {
+                        MessageView(
+                            kind: .error,
+                            title: "error_loading_title",
+                            text: "error_loading_text",
+                            actionButtonTitle: "error_loading_action"
+                        ) {
                             viewModel.loadNextPage()
                         }
                     } else if viewModel.isMoreDataAvailable {
@@ -54,8 +59,10 @@ struct DefinitionListView_Previews: PreviewProvider {
                     .previewDisplayName("Definitions of term")
             }
 
-            DefinitionListView(viewModel: .init(content: .definition(id: "1")))
-                .previewDisplayName("Definition by ID")
+            NavigationView {
+                DefinitionListView(viewModel: .init(content: .definition(id: "1")))
+                    .previewDisplayName("Definition by ID")
+            }
         }
     }
 }
