@@ -43,6 +43,9 @@
 		E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0371BFE2A90D11100573042 /* LocalizedString.swift */; };
 		E0867D7B2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
 		E0867D7C2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
+		E0A4F30A2A9E1E6F00B25074 /* DefinitionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3092A9E1E6F00B25074 /* DefinitionListView.swift */; };
+		E0A4F30C2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F30B2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift */; };
+		E0A4F3102A9E391800B25074 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F30F2A9E391800B25074 /* MessageView.swift */; };
 		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
 		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
 		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
@@ -123,6 +126,9 @@
 		E0371BFB2A90CF7B00573042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0371BFD2A90CF7D00573042 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0371BFE2A90D11100573042 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		E0A4F3092A9E1E6F00B25074 /* DefinitionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionListView.swift; sourceTree = "<group>"; };
+		E0A4F30B2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefinitionListView-ViewModel.swift"; sourceTree = "<group>"; };
+		E0A4F30F2A9E391800B25074 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordBundle.swift; sourceTree = "<group>"; };
 		E0D254382A88FA2400186BA0 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
@@ -185,12 +191,12 @@
 		E01A5FBB2A81113C00694C29 /* UrbanDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */,
 				E0371BF32A90CEC900573042 /* Resources */,
 				E01A5FDE2A81896200694C29 /* Helpers */,
 				E01A5FD22A811C3800694C29 /* Services */,
 				E01A5FCD2A811A4F00694C29 /* Views */,
 				E01A5FCA2A8119C400694C29 /* HTTPClient */,
-				E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */,
 				E01A5FC22A81113C00694C29 /* Preview Content */,
 			);
 			path = UrbanDictionary;
@@ -223,6 +229,8 @@
 				E01A5FEF2A82C2BF00694C29 /* DefinitionsView-ViewModel.swift */,
 				E01A5FE12A81909600694C29 /* SearchView.swift */,
 				E01A5FE32A8190A200694C29 /* SearchView-ViewModel.swift */,
+				E0A4F3092A9E1E6F00B25074 /* DefinitionListView.swift */,
+				E0A4F30B2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 				E01A5FDC2A817E2E00694C29 /* ActivityIndicatorView.swift */,
 				E01A5FEB2A828D1500694C29 /* ShareSheetView.swift */,
 				E01A5FFB2A866BA000694C29 /* PresentableMessageView.swift */,
+				E0A4F30F2A9E391800B25074 /* MessageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -478,6 +487,8 @@
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
 				E01A5FEE2A82C29C00694C29 /* DefinitionsView.swift in Sources */,
+				E0A4F30A2A9E1E6F00B25074 /* DefinitionListView.swift in Sources */,
+				E0A4F3102A9E391800B25074 /* MessageView.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FE82A819C5D00694C29 /* SuggestionView.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
@@ -486,6 +497,7 @@
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
+				E0A4F30C2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift in Sources */,
 				E01A5FE22A81909600694C29 /* SearchView.swift in Sources */,
 				E01A5FE42A8190A200694C29 /* SearchView-ViewModel.swift in Sources */,
 			);

@@ -8,8 +8,11 @@
 import SwiftUI
 
 // TODOs:
-// - Favorite definitions (saved locally???)
-// - iPad and/or macOS support
+// [ ] Accessory views for root screen
+// [ ] Implement reusable and customizable error view with retry button
+// [ ] Figure out a way to introduce a delay when retry button is tapped
+// [ ] Inline search support in aforementioned view
+// [ ] Background updates once in a while to keep the view in sync
 
 @main
 struct UrbanDictionaryApp: App {
