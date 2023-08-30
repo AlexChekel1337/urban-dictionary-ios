@@ -13,7 +13,7 @@ There are no additional Swift packages... yet 🙂
 
 ## Roadmap
 These are the features I'm planning on implementing soon.
-- [ ] Save definition to favorites
+- [ ] Save definitions to favorite
 - [ ] Proper iPadOS support
 - [ ] Interactive widgets for iOS 17
 
