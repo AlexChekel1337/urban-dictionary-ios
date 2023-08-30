@@ -18,6 +18,7 @@ extension DefinitionListView {
         @Published private(set) var words: [Word] = []
         @Published private(set) var isMoreDataAvailable: Bool = true
         @Published private(set) var hasError: Bool = false
+        @Published var searchTerm: String = ""
 
         var shouldShowAccessoryViews: Bool {
             switch content {
@@ -47,6 +48,11 @@ extension DefinitionListView {
                     return LocalizedString("definition_title")
             }
         }
+
+        lazy var searchViewModel: SearchSuggestionListView.ViewModel = {
+            let viewModel = SearchSuggestionListView.ViewModel(searchTermPublisher: $searchTerm.eraseToAnyPublisher())
+            return viewModel
+        }()
 
         private let content: Content
         private let service: UrbanDictionaryService = .init()

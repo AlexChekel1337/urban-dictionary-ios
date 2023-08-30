@@ -10,6 +10,7 @@ import SwiftUI
 struct MessageView: View {
     enum Kind {
         case error
+        case notFound
         case custom(emoji: String)
     }
 
@@ -65,6 +66,8 @@ private extension MessageView.Kind {
         switch self {
             case .error:
                 return "⚠️"
+            case .notFound:
+                return "🤷"
             case .custom(let emoji):
                 return emoji
         }
@@ -81,6 +84,13 @@ struct MessageView_Previews: PreviewProvider {
                 actionButtonTitle: "Retry"
             )
             .previewDisplayName("Error")
+
+            MessageView(
+                kind: .notFound,
+                title: "Nothing found",
+                text: "Consider trying a different search request"
+            )
+            .previewDisplayName("Not Found")
 
             MessageView(
                 kind: .custom(emoji: "🪵"),

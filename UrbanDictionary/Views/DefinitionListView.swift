@@ -10,10 +10,21 @@ import SwiftUI
 struct DefinitionListView: View {
     @StateObject var viewModel: ViewModel
 
+    @Environment(\.viewFactory) private var viewFactory
+
+    @State private var selectedSearchSuggestion: String = ""
+    @State private var isSearchResultsScreenPresented: Bool = false
+
     var body: some View {
         ZStack {
             Color.systemGrouppedBackground
                 .ignoresSafeArea()
+
+            NavigationLink(isActive: $isSearchResultsScreenPresented) {
+                viewFactory.makeDefinitionsView(defining: selectedSearchSuggestion)
+            } label: {
+                EmptyView()
+            }
 
             ScrollView {
                 LazyVGrid(columns: [.init(.flexible())], spacing: 16) {
@@ -43,6 +54,17 @@ struct DefinitionListView: View {
         }
         .navigationTitle(viewModel.navigationTitle)
         .navigationBarTitleDisplayMode(viewModel.shouldUseCompactNavigation ? .inline : .automatic)
+        .searchable(
+            if: viewModel.shouldShowAccessoryViews,
+            text: $viewModel.searchTerm,
+            placement: .navigationBarDrawer,
+            prompt: "search_text_field_prompt"
+        ) {
+            SearchSuggestionListView(viewModel: viewModel.searchViewModel) { suggestion in
+                selectedSearchSuggestion = suggestion
+                isSearchResultsScreenPresented.toggle()
+            }
+        }
     }
 }
 
