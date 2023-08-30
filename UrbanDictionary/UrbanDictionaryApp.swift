@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-// TODOs:
-// - Retry action for search view
-// - Fix NSURLErrorCancelled error being thrown whenever I cancel the current Task
-// - Figure out a way to introduce a delay when retry button is tapped
-// - Background updates once in a while to keep the view in sync
-
 @main
 struct UrbanDictionaryApp: App {
     @Environment(\.viewFactory) private var viewFactory
