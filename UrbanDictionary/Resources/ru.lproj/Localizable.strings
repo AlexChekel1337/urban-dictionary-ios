@@ -1,10 +1,10 @@
 "definition_title" = "Значение";
 "definitions_of_title" = "Значения \"%@\"";
-"error_loading_title" = "Что-то пошло не так";
-"error_loading_text" = "При загрузке данных произошла ошибка";
 "error_loading_action" = "Повторить";
-"error_not_found_title" = "Ничего не нашлось";
+"error_loading_text" = "При загрузке данных произошла ошибка";
+"error_loading_title" = "Что-то пошло не так";
 "error_not_found_text" = "Попробуйте изменить запрос";
+"error_not_found_title" = "Ничего не нашлось";
 "search_text_field_prompt" = "Поиск по значениям";
 "search_message_enter_query" = "Введите поисковой запрос";
 "search_message_error" = "Возникла ошибка";

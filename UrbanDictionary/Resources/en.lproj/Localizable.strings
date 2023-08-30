@@ -1,10 +1,10 @@
 "definition_title" = "Definition";
 "definitions_of_title" = "Definitions of \"%@\"";
-"error_loading_title" = "Something went wrong";
-"error_loading_text" = "An error occurred while loading data";
 "error_loading_action" = "Retry";
-"error_not_found_title" = "Nothing found";
+"error_loading_text" = "An error occurred while loading data";
+"error_loading_title" = "Something went wrong";
 "error_not_found_text" = "Try changing search request";
+"error_not_found_title" = "Nothing found";
 "search_text_field_prompt" = "Search definitions";
 "search_message_enter_query" = "Enter search request";
 "search_message_error" = "An error occurred";
