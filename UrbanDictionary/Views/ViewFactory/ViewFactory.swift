@@ -34,32 +34,33 @@ class ViewFactory {
 
                 let view = makeDefinitionsView(defining: term)
                 return AnyView(view)
+            case "/definition":
+                guard let id = components.queryItems?.first(where: { $0.name == "id" })?.value else {
+                    return defaultValue
+                }
+
+                let view = makeDefinitionView(definitionId: id)
+                return AnyView(view)
             default:
                 return defaultValue
         }
     }
 
     @MainActor func makeWordsOfTheDayView() -> some View {
-        let viewModel = DefinitionsView.ViewModel(contents: .wordsOfTheDay)
-        let view = DefinitionsView(viewModel: viewModel)
+        let viewModel = DefinitionListView.ViewModel(content: .wordsOfTheDay)
+        let view = DefinitionListView(viewModel: viewModel)
         return view
     }
 
     @MainActor func makeDefinitionsView(defining term: String) -> some View {
-        let viewModel = DefinitionsView.ViewModel(contents: .definitions(term: term))
-        let view = DefinitionsView(viewModel: viewModel)
+        let viewModel = DefinitionListView.ViewModel(content: .definitions(term: term))
+        let view = DefinitionListView(viewModel: viewModel)
         return view
     }
 
-    @MainActor func makeDefinitionView(showing word: Word) -> some View {
-        let viewModel = DefinitionView.ViewModel(word: word)
-        let view = DefinitionView(viewModel: viewModel)
-        return view
-    }
-
-    @MainActor func makeSearchView() -> some View {
-        let viewModel = SearchView.ViewModel()
-        let view = SearchView(viewModel: viewModel)
+    @MainActor func makeDefinitionView(definitionId: String) -> some View {
+        let viewModel = DefinitionListView.ViewModel(content: .definition(id: definitionId))
+        let view = DefinitionListView(viewModel: viewModel)
         return view
     }
 }

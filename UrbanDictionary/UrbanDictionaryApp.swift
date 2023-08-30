@@ -8,7 +8,6 @@
 import SwiftUI
 
 // TODOs:
-// - Sort strings alphabetically
 // - Retry action for search view
 // - Fix NSURLErrorCancelled error being thrown whenever I cancel the current Task
 // - Figure out a way to introduce a delay when retry button is tapped
@@ -18,6 +17,9 @@ import SwiftUI
 struct UrbanDictionaryApp: App {
     @Environment(\.viewFactory) private var viewFactory
 
+    @State private var deepLinkUrl: URL?
+    @State private var isDeepLinkViewPresented: Bool = false
+
     @State private var wordDefinition: Word?
     @State private var isDefinitionViewPresented: Bool = false
 
@@ -25,9 +27,9 @@ struct UrbanDictionaryApp: App {
         WindowGroup {
             NavigationView {
                 ZStack {
-                    NavigationLink(isActive: $isDefinitionViewPresented) {
-                        if let wordDefinition {
-                            viewFactory.makeDefinitionView(showing: wordDefinition)
+                    NavigationLink(isActive: $isDeepLinkViewPresented) {
+                        if let deepLinkUrl {
+                            viewFactory.makeViewForUrl(deepLinkUrl)
                         }
                     } label: {
                         EmptyView()
@@ -37,43 +39,27 @@ struct UrbanDictionaryApp: App {
                 }
             }
             .onOpenURL { url in
-                showWordView(from: url)
+                deepLinkUrl = url
+                showDeepLinkView()
             }
         }
     }
 
-    private func showWordView(from url: URL) {
-        guard
-            let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-            components.path == "/definition",
-            let id = components.queryItems?.first(where: { $0.name == "id" })?.value
-        else {
-            print("Failed to process deeplink")
-            return
-        }
-
-        let shouldWait = isDefinitionViewPresented
-        isDefinitionViewPresented = false
+    private func showDeepLinkView() {
+        let shouldWait = isDeepLinkViewPresented
+        isDeepLinkViewPresented = false
 
         Task {
-            do {
-                let service = UrbanDictionaryService()
-                let word = try await service.definition(id: id)
-
-                if shouldWait {
-                    // If definition view was already presented, then
-                    // task should be delayed for some time to allow
-                    // pop animation to finish. If there's no delay,
-                    // pop animation will prevent app from presenting
-                    // this view again.
-                    try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
-                }
-
-                wordDefinition = word
-                isDefinitionViewPresented = true
-            } catch {
-                print(error)
+            if shouldWait {
+                // If definition view was already presented, then
+                // task should be delayed for some time to allow
+                // pop animation to finish. If there's no delay,
+                // pop animation will prevent app from presenting
+                // this view again.
+                try await Task.sleep(nanoseconds: 1_000_000_000 * 1)
             }
+
+            isDeepLinkViewPresented.toggle()
         }
     }
 }
