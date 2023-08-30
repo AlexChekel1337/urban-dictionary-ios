@@ -58,7 +58,15 @@ class UrbanDictionaryService {
         }
     }
 
-    func autocomplete(query: String) async throws -> [Suggestion] {
+    func autocomplete(query: String) async throws -> [String] {
+        let parameters = ["term": query]
+
+        let response: [String] = try await client.get(path: "/v0/autocomplete", parameters: parameters)
+
+        return response
+    }
+
+    func detailedAutocomplete(query: String) async throws -> [Suggestion] {
         let parameters = ["term": query]
 
         let response: ResultsResponse<Suggestion> = try await client.get(path: "/v0/autocomplete-extra", parameters: parameters)

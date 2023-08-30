@@ -13,12 +13,13 @@ enum HTTPClientError: Error {
 
 class HTTPClient {
     private let baseUrl: String
+    private let urlSession: URLSession = .init(configuration: .default)
 
     init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
 
-    func get<T:Decodable>(path: String, parameters: [String: String] = [:]) async throws -> T {
+    func get<T: Decodable>(path: String, parameters: [String: String] = [:]) async throws -> T {
         guard var components = URLComponents(string: baseUrl + path) else {
             throw HTTPClientError.invalidUrl
         }
@@ -32,7 +33,7 @@ class HTTPClient {
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
-        let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, _) = try await urlSession.data(for: request)
         let decodedData = try JSONDecoder().decode(T.self, from: data)
 
         return decodedData
