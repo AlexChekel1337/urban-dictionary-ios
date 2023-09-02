@@ -13,10 +13,15 @@ enum HTTPClientError: Error {
 
 class HTTPClient {
     private let baseUrl: String
-    private let urlSession: URLSession = .init(configuration: .default)
+    private let urlSession: URLSession
 
     init(baseUrl: String) {
         self.baseUrl = baseUrl
+
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = ["Accept": "application/json"]
+
+        self.urlSession = URLSession(configuration: configuration)
     }
 
     func get<T: Decodable>(path: String, parameters: [String: String] = [:]) async throws -> T {
@@ -31,7 +36,7 @@ class HTTPClient {
         }
 
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
 
         let (data, _) = try await urlSession.data(for: request)
         let decodedData = try JSONDecoder().decode(T.self, from: data)
