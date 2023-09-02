@@ -7,6 +7,5 @@
         <attribute name="example" optional="YES" attributeType="String"/>
         <attribute name="permalink" optional="YES" attributeType="URI"/>
         <attribute name="word" optional="YES" attributeType="String"/>
-        <attribute name="writtenOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>
