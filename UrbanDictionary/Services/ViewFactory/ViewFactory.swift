@@ -52,4 +52,8 @@ class ViewFactory {
         let view = DefinitionListView(viewModel: viewModel)
         return view
     }
+
+    @MainActor func makeFavoriteDefinitionsView() -> some View {
+        return EmptyView()
+    }
 }

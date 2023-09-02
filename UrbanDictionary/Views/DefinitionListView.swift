@@ -65,6 +65,17 @@ struct DefinitionListView: View {
                 isSearchResultsScreenPresented.toggle()
             }
         }
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                if viewModel.shouldShowAccessoryViews {
+                    NavigationLink {
+                        viewFactory.makeFavoriteDefinitionsView()
+                    } label: {
+                        Image(systemName: "star")
+                    }
+                }
+            }
+        }
     }
 }
 
