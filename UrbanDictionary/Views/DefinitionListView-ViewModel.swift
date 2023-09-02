@@ -16,7 +16,7 @@ extension DefinitionListView {
         }
 
         @Published private(set) var words: [Word] = []
-        @Published private(set) var isMoreDataAvailable: Bool = true
+        @Published private(set) var isLoading: Bool = false
         @Published private(set) var hasError: Bool = false
         @Published var searchTerm: String = ""
 
@@ -59,12 +59,27 @@ extension DefinitionListView {
 
         private var pageIndex: Int = 1
         private var contentTask: Task<Void, Never>?
+        private var isMoreDataAvailable: Bool = true
 
         init(content: Content) {
             self.content = content
+
+            load()
         }
 
-        func loadNextPage() {
+        func loadNextPageIfNeeded(after word: Word) {
+            if word.id == words.last?.id {
+                load()
+            }
+        }
+
+        func retry() {
+            load() // needs a delay
+        }
+
+        private func load() {
+            guard !isLoading, isMoreDataAvailable else { return }
+
             switch content {
                 case .wordsOfTheDay:
                     loadWordsOfTheDay()
@@ -76,8 +91,8 @@ extension DefinitionListView {
         }
 
         private func loadWordsOfTheDay() {
+            isLoading = true
             hasError = false
-            isMoreDataAvailable = true
 
             contentTask?.cancel()
             contentTask = Task {
@@ -94,12 +109,14 @@ extension DefinitionListView {
                     hasError = true
                     isMoreDataAvailable = false
                 }
+
+                isLoading = false
             }
         }
 
         private func loadDefinitions(term: String) {
+            isLoading = true
             hasError = false
-            isMoreDataAvailable = true
 
             contentTask?.cancel()
             contentTask = Task {
@@ -116,12 +133,15 @@ extension DefinitionListView {
                     hasError = true
                     isMoreDataAvailable = false
                 }
+
+                isLoading = false
             }
         }
 
         private func loadDefinition(id: String) {
+            isLoading = false
             hasError = false
-            isMoreDataAvailable = true
+
             contentTask?.cancel()
             contentTask = Task {
                 do {
@@ -136,6 +156,8 @@ extension DefinitionListView {
                     hasError = true
                     isMoreDataAvailable = false
                 }
+
+                isLoading = false
             }
         }
     }

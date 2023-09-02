@@ -30,6 +30,9 @@ struct DefinitionListView: View {
                 LazyVGrid(columns: [.init(.flexible())], spacing: 16) {
                     ForEach(viewModel.words) { word in
                         WordView(word)
+                            .onAppear {
+                                viewModel.loadNextPageIfNeeded(after: word)
+                            }
                     }
 
                     if viewModel.hasError {
@@ -39,14 +42,11 @@ struct DefinitionListView: View {
                             text: "error_loading_text",
                             actionButtonTitle: "error_loading_action"
                         ) {
-                            viewModel.loadNextPage()
+                            viewModel.retry()
                         }
-                    } else if viewModel.isMoreDataAvailable {
+                    } else if viewModel.isLoading {
                         ActivityIndicatorView(isAnimating: .constant(true))
                             .frame(maxWidth: .infinity)
-                            .onAppear {
-                                viewModel.loadNextPage()
-                            }
                     }
                 }
                 .padding()
