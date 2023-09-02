@@ -43,6 +43,9 @@
 		E0A4F3122A9EA6E200B25074 /* SearchSuggestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3112A9EA6E200B25074 /* SearchSuggestionListView.swift */; };
 		E0A4F3142A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3132A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift */; };
 		E0A4F3162A9F5EE800B25074 /* ConditionallySearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3152A9F5EE800B25074 /* ConditionallySearchable.swift */; };
+		E0A4F3182AA3619B00B25074 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3172AA3619B00B25074 /* ServiceRegistry.swift */; };
+		E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31A2AA362D500B25074 /* PersistenceService.swift */; };
+		E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */; };
 		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
 		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
 		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
@@ -121,6 +124,11 @@
 		E0A4F3112A9EA6E200B25074 /* SearchSuggestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionListView.swift; sourceTree = "<group>"; };
 		E0A4F3132A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchSuggestionListView-ViewModel.swift"; sourceTree = "<group>"; };
 		E0A4F3152A9F5EE800B25074 /* ConditionallySearchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionallySearchable.swift; sourceTree = "<group>"; };
+		E0A4F3172AA3619B00B25074 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
+		E0A4F31A2AA362D500B25074 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanDictionary.xcdatamodel; sourceTree = "<group>"; };
+		E0A4F31F2AA366F300B25074 /* UrbanDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanDictionary.entitlements; sourceTree = "<group>"; };
+		E0A4F3202AA3678100B25074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordBundle.swift; sourceTree = "<group>"; };
 		E0D254382A88FA2400186BA0 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
@@ -181,6 +189,8 @@
 		E01A5FBB2A81113C00694C29 /* UrbanDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				E0A4F3202AA3678100B25074 /* Info.plist */,
+				E0A4F31F2AA366F300B25074 /* UrbanDictionary.entitlements */,
 				E01A5FBC2A81113C00694C29 /* UrbanDictionaryApp.swift */,
 				E0371BF32A90CEC900573042 /* Resources */,
 				E01A5FDE2A81896200694C29 /* Helpers */,
@@ -224,7 +234,9 @@
 		E01A5FD22A811C3800694C29 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E0A4F3172AA3619B00B25074 /* ServiceRegistry.swift */,
 				E01A5FD32A811C3C00694C29 /* UrbanDictionaryService */,
+				E0A4F3192AA362BE00B25074 /* PersistenceService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -311,8 +323,17 @@
 			children = (
 				E01A5FC02A81113C00694C29 /* Assets.xcassets */,
 				E0371BFC2A90CF7B00573042 /* Localizable.strings */,
+				E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0A4F3192AA362BE00B25074 /* PersistenceService */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4F31A2AA362D500B25074 /* PersistenceService.swift */,
+			);
+			path = PersistenceService;
 			sourceTree = "<group>";
 		};
 		E0D254352A88FA2400186BA0 /* RandomWord */ = {
@@ -468,13 +489,16 @@
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E0A4F3142A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift in Sources */,
+				E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
 				E0A4F3122A9EA6E200B25074 /* SearchSuggestionListView.swift in Sources */,
 				E0A4F30A2A9E1E6F00B25074 /* DefinitionListView.swift in Sources */,
+				E0A4F3182AA3619B00B25074 /* ServiceRegistry.swift in Sources */,
 				E0A4F3102A9E391800B25074 /* MessageView.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
 				E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */,
+				E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */,
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
@@ -663,12 +687,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UrbanDictionary/UrbanDictionary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"UrbanDictionary/Preview Content\"";
 				DEVELOPMENT_TEAM = DDL2W3NY34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrbanDictionary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = UD;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -698,12 +724,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UrbanDictionary/UrbanDictionary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"UrbanDictionary/Preview Content\"";
 				DEVELOPMENT_TEAM = DDL2W3NY34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrbanDictionary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = UD;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -879,6 +907,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */,
+			);
+			currentVersion = E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */;
+			path = UrbanDictionary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E01A5FB12A81113B00694C29 /* Project object */;
 }
