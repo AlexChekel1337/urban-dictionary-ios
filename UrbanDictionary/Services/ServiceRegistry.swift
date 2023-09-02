@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+private struct ViewFactoryEnvironmentKey: EnvironmentKey {
+    static let defaultValue = ViewFactory()
+}
+
 private struct UrbanDictionaryServiceEnvironmentKey: EnvironmentKey {
     static let defaultValue = UrbanDictionaryService()
 }
@@ -16,6 +20,11 @@ private struct PersistenceServiceEnvironmentKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
+    var viewFactory: ViewFactory {
+        get { self[ViewFactoryEnvironmentKey.self] }
+        set { self[ViewFactoryEnvironmentKey.self] = newValue }
+    }
+
     var urbanDictionaryService: UrbanDictionaryService {
         get { self[UrbanDictionaryServiceEnvironmentKey.self] }
         set { self[UrbanDictionaryServiceEnvironmentKey.self] = newValue }

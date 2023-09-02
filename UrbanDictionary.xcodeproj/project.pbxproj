@@ -221,7 +221,6 @@
 		E01A5FCD2A811A4F00694C29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E01A5FF12A82C92100694C29 /* ViewFactory */,
 				E01A5FD92A81273F00694C29 /* Components */,
 				E0A4F3112A9EA6E200B25074 /* SearchSuggestionListView.swift */,
 				E0A4F3132A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift */,
@@ -235,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A4F3172AA3619B00B25074 /* ServiceRegistry.swift */,
+				E01A5FF12A82C92100694C29 /* ViewFactory */,
 				E01A5FD32A811C3C00694C29 /* UrbanDictionaryService */,
 				E0A4F3192AA362BE00B25074 /* PersistenceService */,
 			);

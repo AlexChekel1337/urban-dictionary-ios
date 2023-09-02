@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-private struct ViewFactoryEnvironmentKey: EnvironmentKey {
-    static let defaultValue = ViewFactory()
-}
-
-extension EnvironmentValues {
-    var viewFactory: ViewFactory {
-        get { self[ViewFactoryEnvironmentKey.self] }
-        set { self[ViewFactoryEnvironmentKey.self] = newValue }
-    }
-}
-
 class ViewFactory {
     @MainActor func makeViewForUrl(_ url: URL) -> some View {
         let defaultValue = AnyView(EmptyView())
