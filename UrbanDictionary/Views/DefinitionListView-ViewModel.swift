@@ -74,11 +74,11 @@ extension DefinitionListView {
         }
 
         func retry() {
-            load() // needs a delay
+            load(isRetrying: true)
         }
 
-        private func load() {
-            guard !isLoading, isMoreDataAvailable else { return }
+        private func load(isRetrying: Bool = false) {
+            guard !isLoading && isMoreDataAvailable || isRetrying else { return }
 
             switch content {
                 case .wordsOfTheDay:

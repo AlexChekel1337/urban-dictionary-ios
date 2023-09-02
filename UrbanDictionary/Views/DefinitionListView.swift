@@ -77,7 +77,7 @@ struct DefinitionListView_Previews: PreviewProvider {
             }
 
             NavigationView {
-                DefinitionListView(viewModel: .init(content: .definitions(term: "fr")))
+                DefinitionListView(viewModel: .init(content: .definitions(term: "iphone")))
                     .previewDisplayName("Definitions of term")
             }
 
