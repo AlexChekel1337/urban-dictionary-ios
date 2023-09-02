@@ -32,6 +32,7 @@ struct UrbanDictionaryApp: App {
                     viewFactory.makeWordsOfTheDayView()
                 }
             }
+            .navigationViewStyle(.stack)
             .onOpenURL { url in
                 deepLinkUrl = url
                 showDeepLinkView()
