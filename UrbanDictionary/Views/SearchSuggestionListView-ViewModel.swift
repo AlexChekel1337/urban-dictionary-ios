@@ -22,6 +22,7 @@ extension SearchSuggestionListView {
         private let service: UrbanDictionaryService = .init()
         private var searchTermCancellable: AnyCancellable?
         private var currentSearchTask: Task<Void, Never>?
+        private var lastSearchedTerm: String?
 
         init(searchTermPublisher: AnyPublisher<String, Never>) {
             searchTermCancellable = searchTermPublisher.sink { [weak self] value in
@@ -29,10 +30,17 @@ extension SearchSuggestionListView {
             }
         }
 
-        func retry() { /* retry with last saved term */ }
+        func retry() {
+            guard let lastSearchedTerm else {
+                return
+            }
+
+            performSearch(for: lastSearchedTerm)
+        }
 
         private func performSearch(for term: String) {
             let trimmedTerm = term.trimmingCharacters(in: .whitespacesAndNewlines)
+            lastSearchedTerm = trimmedTerm
 
             guard !trimmedTerm.isEmpty else {
                 currentSearchTask?.cancel()
