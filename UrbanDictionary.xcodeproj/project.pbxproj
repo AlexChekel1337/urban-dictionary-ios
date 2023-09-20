@@ -413,6 +413,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "Alexander Chekel";
 				TargetAttributes = {
 					E01A5FB82A81113C00694C29 = {
 						CreatedOnToolsVersion = 14.1;
