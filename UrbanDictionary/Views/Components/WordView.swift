@@ -3,16 +3,13 @@
 //  UrbanDictionary
 //
 //  Created by Alexander Chekel on 07.08.2023.
+//  Copyright © 2023 Alexander Chekel. All rights reserved.
 //
 
 import SwiftUI
 
 struct WordView: View {
-    @Environment(\.viewFactory) private var viewFactory
-
     @State private var isShareSheetPresented: Bool = false
-    @State private var isDefinitionViewPresented: Bool = false
-    @State private var selectedDefinitionUrl: URL = .nonExistentUrl
 
     let word: Word
 
@@ -22,12 +19,6 @@ struct WordView: View {
 
     var body: some View {
         ZStack {
-            NavigationLink(isActive: $isDefinitionViewPresented) {
-                viewFactory.makeViewForUrl(selectedDefinitionUrl)
-            } label: {
-                EmptyView()
-            }
-
             Rectangle()
                 .foregroundColor(.secondarySystemGrouppedBackground)
                 .cornerRadius(16)
