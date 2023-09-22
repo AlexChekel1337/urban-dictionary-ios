@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct WordsOfTheDayView: View {
+    @Environment(\.coordinatorObject) private var coordinator
+
     @StateObject private var viewModel = ViewModel()
+    @StateObject private var searchViewModel = SearchViewModel()
+    @State private var searchTerm: String = ""
 
     var body: some View {
         ScrollView {
@@ -33,6 +37,17 @@ struct WordsOfTheDayView: View {
         }
         .background(Color.systemGrouppedBackground)
         .navigationTitle("words_of_the_day_title")
+        .searchable(text: $searchTerm)
+        .searchSuggestions {
+            ForEach(searchViewModel.suggestions, id: \.self) { suggestion in
+                SuggestionView(text: suggestion) {
+                    coordinator.showDefinitions(of: suggestion)
+                }
+            }
+        }
+        .onChange(of: searchTerm) { value in
+            searchViewModel.search(for: value)
+        }
     }
 }
 

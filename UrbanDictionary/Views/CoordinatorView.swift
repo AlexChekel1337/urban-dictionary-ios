@@ -14,6 +14,7 @@ struct CoordinatorView: View {
     var body: some View {
         NavigationStack(path: $coordinatorObject.navigationPath) {
             WordsOfTheDayView()
+                .environment(\.coordinatorObject, coordinatorObject)
                 .navigationDestination(for: DefinableTerm.self) { definableTerm in
                     DefinitionsView(definableTerm: definableTerm)
                 }

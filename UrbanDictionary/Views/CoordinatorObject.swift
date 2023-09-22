@@ -22,6 +22,11 @@ extension EnvironmentValues {
 class CoordinatorObject: ObservableObject {
     @Published var navigationPath = NavigationPath()
 
+    func showDefinitions(of term: String) {
+        let definableTerm = DefinableTerm(term: term)
+        navigationPath.append(definableTerm)
+    }
+
     func openUrl(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return
