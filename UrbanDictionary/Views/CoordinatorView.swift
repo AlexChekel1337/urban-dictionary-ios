@@ -14,12 +14,11 @@ struct CoordinatorView: View {
     var body: some View {
         NavigationStack(path: $coordinatorObject.navigationPath) {
             WordsOfTheDayView()
-                .environment(\.coordinatorObject, coordinatorObject)
                 .navigationDestination(for: DefinableTerm.self) { definableTerm in
                     DefinitionsView(definableTerm: definableTerm)
                 }
                 .navigationDestination(for: TermIdentifier.self) { termIdentifier in
-                    Text("Term with id \(termIdentifier.id)")
+                    LinkedDefinitionView(termIdentifier: termIdentifier)
                 }
         }
         .environment(\.openURL, OpenURLAction { url in

@@ -67,6 +67,8 @@
 		E0D631A02ABDA2140041A5A0 /* DefinableTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6319F2ABDA2140041A5A0 /* DefinableTerm.swift */; };
 		E0D631A22ABDAAD40041A5A0 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A12ABDAAD40041A5A0 /* CoordinatorObject.swift */; };
 		E0D631A42ABDB9660041A5A0 /* TermIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */; };
+		E0D631A62ABDBB480041A5A0 /* LinkedDefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A52ABDBB480041A5A0 /* LinkedDefinitionView.swift */; };
+		E0D631A82ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A72ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		E0D6319F2ABDA2140041A5A0 /* DefinableTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinableTerm.swift; sourceTree = "<group>"; };
 		E0D631A12ABDAAD40041A5A0 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
 		E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermIdentifier.swift; sourceTree = "<group>"; };
+		E0D631A52ABDBB480041A5A0 /* LinkedDefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedDefinitionView.swift; sourceTree = "<group>"; };
+		E0D631A72ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedDefinitionView.ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 				E0A4F3132A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift */,
 				E0A4F3092A9E1E6F00B25074 /* DefinitionListView.swift */,
 				E0A4F30B2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift */,
+				E0D631A52ABDBB480041A5A0 /* LinkedDefinitionView.swift */,
+				E0D631A72ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift */,
 				E0D631982ABDA12B0041A5A0 /* DefinitionsView.swift */,
 				E0D6319A2ABDA15F0041A5A0 /* DefinitionsView.ViewModel.swift */,
 				E0A4F3F52ABCD72600B25074 /* WordsOfTheDayView.swift */,
@@ -534,6 +540,7 @@
 				E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */,
 				E0A4F30A2A9E1E6F00B25074 /* DefinitionListView.swift in Sources */,
 				E0A4F3182AA3619B00B25074 /* ServiceRegistry.swift in Sources */,
+				E0D631A62ABDBB480041A5A0 /* LinkedDefinitionView.swift in Sources */,
 				E0A4F3102A9E391800B25074 /* MessageView.swift in Sources */,
 				E0D631A22ABDAAD40041A5A0 /* CoordinatorObject.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
@@ -548,6 +555,7 @@
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
+				E0D631A82ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift in Sources */,
 				E0A4F30C2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
