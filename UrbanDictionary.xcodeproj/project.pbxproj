@@ -62,6 +62,12 @@
 		E0D631DE2ABE2BBE0041A5A0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FD72A811E7500694C29 /* Word.swift */; };
 		E0D631DF2ABE2BD90041A5A0 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
 		E0D631E02ABE2BD90041A5A0 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FE52A8198F100694C29 /* Suggestion.swift */; };
+		E0D631E32ABE2EDD0041A5A0 /* WidgetPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E22ABE2EDD0041A5A0 /* WidgetPadding.swift */; };
+		E0D631E42ABE308E0041A5A0 /* WidgetPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E22ABE2EDD0041A5A0 /* WidgetPadding.swift */; };
+		E0D631E52ABE308E0041A5A0 /* WidgetPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E22ABE2EDD0041A5A0 /* WidgetPadding.swift */; };
+		E0D631E72ABE33750041A5A0 /* WidgetContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E62ABE33750041A5A0 /* WidgetContainerBackground.swift */; };
+		E0D631E82ABE34310041A5A0 /* WidgetContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E62ABE33750041A5A0 /* WidgetContainerBackground.swift */; };
+		E0D631E92ABE34310041A5A0 /* WidgetContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631E62ABE33750041A5A0 /* WidgetContainerBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +148,8 @@
 		E0D631A72ABDBB580041A5A0 /* LinkedDefinitionView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedDefinitionView.ViewModel.swift; sourceTree = "<group>"; };
 		E0D631D92ABE254A0041A5A0 /* WordsOfTheDayView.SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsOfTheDayView.SearchViewModel.swift; sourceTree = "<group>"; };
 		E0D631DB2ABE28CF0041A5A0 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
+		E0D631E22ABE2EDD0041A5A0 /* WidgetPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPadding.swift; sourceTree = "<group>"; };
+		E0D631E62ABE33750041A5A0 /* WidgetContainerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContainerBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,7 @@
 				E01A5FDE2A81896200694C29 /* Helpers */,
 				E01A5FD22A811C3800694C29 /* Services */,
 				E0D6319C2ABDA19A0041A5A0 /* Models */,
+				E0D631E12ABE2EB70041A5A0 /* Modifiers */,
 				E01A5FCD2A811A4F00694C29 /* Views */,
 				E01A5FCA2A8119C400694C29 /* HTTPClient */,
 				E01A5FC22A81113C00694C29 /* Preview Content */,
@@ -349,6 +358,15 @@
 				E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E0D631E12ABE2EB70041A5A0 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E0D631E22ABE2EDD0041A5A0 /* WidgetPadding.swift */,
+				E0D631E62ABE33750041A5A0 /* WidgetContainerBackground.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,10 +517,12 @@
 				E0D631992ABDA12B0041A5A0 /* DefinitionsView.swift in Sources */,
 				E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */,
 				E0D631DC2ABE28CF0041A5A0 /* SuggestionView.swift in Sources */,
+				E0D631E32ABE2EDD0041A5A0 /* WidgetPadding.swift in Sources */,
 				E0D631A62ABDBB480041A5A0 /* LinkedDefinitionView.swift in Sources */,
 				E0D631A22ABDAAD40041A5A0 /* CoordinatorObject.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
+				E0D631E72ABE33750041A5A0 /* WidgetContainerBackground.swift in Sources */,
 				E0A4F3F62ABCD72700B25074 /* WordsOfTheDayView.swift in Sources */,
 				E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */,
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
@@ -523,6 +543,8 @@
 				E0D254442A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E0D631DD2ABE2BBD0041A5A0 /* Word.swift in Sources */,
 				E01A600B2A86CC5900694C29 /* WordOfTheDayBundle.swift in Sources */,
+				E0D631E82ABE34310041A5A0 /* WidgetContainerBackground.swift in Sources */,
+				E0D631E42ABE308E0041A5A0 /* WidgetPadding.swift in Sources */,
 				E0D631DF2ABE2BD90041A5A0 /* Suggestion.swift in Sources */,
 				E01A600D2A86CC5900694C29 /* WordOfTheDay.swift in Sources */,
 				E01A60192A86CC9400694C29 /* UrbanDictionaryService.swift in Sources */,
@@ -538,6 +560,8 @@
 				E0D254472A88FA5D00186BA0 /* UrbanDictionaryService.swift in Sources */,
 				E0D631DE2ABE2BBE0041A5A0 /* Word.swift in Sources */,
 				E0D254392A88FA2400186BA0 /* RandomWord.swift in Sources */,
+				E0D631E92ABE34310041A5A0 /* WidgetContainerBackground.swift in Sources */,
+				E0D631E52ABE308E0041A5A0 /* WidgetPadding.swift in Sources */,
 				E0D631E02ABE2BD90041A5A0 /* Suggestion.swift in Sources */,
 				E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */,
 				E0D254452A88FA5800186BA0 /* UrbanDictionaryLinkTransformer.swift in Sources */,
