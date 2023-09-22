@@ -19,6 +19,10 @@ struct CoordinatorView: View {
                     DefinitionsView(definableTerm: definableTerm)
                 }
         }
+        .environment(\.openURL, OpenURLAction { url in
+            coordinatorObject.openUrl(url)
+            return .handled
+        })
     }
 }
 

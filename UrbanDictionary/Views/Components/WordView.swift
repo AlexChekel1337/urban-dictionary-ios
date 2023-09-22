@@ -74,11 +74,6 @@ struct WordView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .environment(\.openURL, OpenURLAction(handler: { url in
-                selectedDefinitionUrl = url
-                isDefinitionViewPresented = true
-                return .handled
-            }))
         }
     }
 }
