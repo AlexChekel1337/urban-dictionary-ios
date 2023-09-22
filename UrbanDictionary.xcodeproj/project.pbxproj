@@ -46,6 +46,10 @@
 		E0A4F3182AA3619B00B25074 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3172AA3619B00B25074 /* ServiceRegistry.swift */; };
 		E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31A2AA362D500B25074 /* PersistenceService.swift */; };
 		E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */; };
+		E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F32ABCCDA900B25074 /* CoordinatorView.swift */; };
+		E0A4F3F62ABCD72700B25074 /* WordsOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F52ABCD72600B25074 /* WordsOfTheDayView.swift */; };
+		E0A4F3F82ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F72ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift */; };
+		E0A4F3FA2ABCE47800B25074 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F92ABCE47800B25074 /* ErrorMessageView.swift */; };
 		E0D254332A88FA2400186BA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60052A86CC5900694C29 /* WidgetKit.framework */; };
 		E0D254342A88FA2400186BA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A60072A86CC5900694C29 /* SwiftUI.framework */; };
 		E0D254372A88FA2400186BA0 /* RandomWordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */; };
@@ -129,6 +133,10 @@
 		E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanDictionary.xcdatamodel; sourceTree = "<group>"; };
 		E0A4F31F2AA366F300B25074 /* UrbanDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanDictionary.entitlements; sourceTree = "<group>"; };
 		E0A4F3202AA3678100B25074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E0A4F3F32ABCCDA900B25074 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		E0A4F3F52ABCD72600B25074 /* WordsOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsOfTheDayView.swift; sourceTree = "<group>"; };
+		E0A4F3F72ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsOfTheDayView.ViewModel.swift; sourceTree = "<group>"; };
+		E0A4F3F92ABCE47800B25074 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		E0D254322A88FA2400186BA0 /* RandomWordExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D254362A88FA2400186BA0 /* RandomWordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordBundle.swift; sourceTree = "<group>"; };
 		E0D254382A88FA2400186BA0 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
@@ -221,11 +229,14 @@
 		E01A5FCD2A811A4F00694C29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0A4F3F32ABCCDA900B25074 /* CoordinatorView.swift */,
 				E01A5FD92A81273F00694C29 /* Components */,
 				E0A4F3112A9EA6E200B25074 /* SearchSuggestionListView.swift */,
 				E0A4F3132A9EA70B00B25074 /* SearchSuggestionListView-ViewModel.swift */,
 				E0A4F3092A9E1E6F00B25074 /* DefinitionListView.swift */,
 				E0A4F30B2A9E1E8400B25074 /* DefinitionListView-ViewModel.swift */,
+				E0A4F3F52ABCD72600B25074 /* WordsOfTheDayView.swift */,
+				E0A4F3F72ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 				E01A5FEB2A828D1500694C29 /* ShareSheetView.swift */,
 				E0A4F30F2A9E391800B25074 /* MessageView.swift */,
 				E0A4F3152A9F5EE800B25074 /* ConditionallySearchable.swift */,
+				E0A4F3F92ABCE47800B25074 /* ErrorMessageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -493,14 +505,18 @@
 				E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */,
 				E01A5FEC2A828D1500694C29 /* ShareSheetView.swift in Sources */,
 				E0A4F3122A9EA6E200B25074 /* SearchSuggestionListView.swift in Sources */,
+				E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */,
 				E0A4F30A2A9E1E6F00B25074 /* DefinitionListView.swift in Sources */,
 				E0A4F3182AA3619B00B25074 /* ServiceRegistry.swift in Sources */,
 				E0A4F3102A9E391800B25074 /* MessageView.swift in Sources */,
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
+				E0A4F3F62ABCD72700B25074 /* WordsOfTheDayView.swift in Sources */,
 				E01A5FF32A82C92E00694C29 /* ViewFactory.swift in Sources */,
 				E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */,
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
+				E0A4F3F82ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift in Sources */,
+				E0A4F3FA2ABCE47800B25074 /* ErrorMessageView.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
@@ -690,7 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UrbanDictionary/UrbanDictionary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"UrbanDictionary/Preview Content\"";
 				DEVELOPMENT_TEAM = DDL2W3NY34;
 				ENABLE_PREVIEWS = YES;
@@ -702,7 +718,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -727,7 +743,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UrbanDictionary/UrbanDictionary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"UrbanDictionary/Preview Content\"";
 				DEVELOPMENT_TEAM = DDL2W3NY34;
 				ENABLE_PREVIEWS = YES;
@@ -739,7 +755,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -768,7 +784,7 @@
 				INFOPLIST_FILE = WordOfTheDay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WordOfTheDay;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,7 +812,7 @@
 				INFOPLIST_FILE = WordOfTheDay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WordOfTheDay;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -824,7 +840,7 @@
 				INFOPLIST_FILE = RandomWord/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RandomWord;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -852,7 +868,7 @@
 				INFOPLIST_FILE = RandomWord/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RandomWord;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
