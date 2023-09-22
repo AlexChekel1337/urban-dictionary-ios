@@ -108,6 +108,7 @@ struct RandomWordEntryView : View {
                 .tint(.primary)
         }
         .applyingWidgetPadding()
+        .applyingDefaultWidgetBackground()
         .widgetURL(URL(string: "urbandictionary:///definition?id=\(entry.id)"))
     }
 }
