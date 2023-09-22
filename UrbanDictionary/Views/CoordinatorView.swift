@@ -9,17 +9,19 @@
 import SwiftUI
 
 struct CoordinatorView: View {
-    @State private var navigationPath = NavigationPath()
+    @StateObject private var coordinatorObject = CoordinatorObject()
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
+        NavigationStack(path: $coordinatorObject.navigationPath) {
             WordsOfTheDayView()
+                .environment(\.coordinatorObject, coordinatorObject)
+                .navigationDestination(for: DefinableTerm.self) { definableTerm in
+                    DefinitionsView(definableTerm: definableTerm)
+                }
         }
     }
 }
 
-struct CoordinatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoordinatorView()
-    }
+#Preview {
+    CoordinatorView()
 }

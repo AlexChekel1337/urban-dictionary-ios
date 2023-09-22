@@ -1,15 +1,17 @@
 //
-//  WordsOfTheDayView.swift
+//  DefinitionsView.swift
 //  UrbanDictionary
 //
-//  Created by Alexander Chekel on 21.09.2023.
+//  Created by Alexander Chekel on 22.09.2023.
 //  Copyright © 2023 Alexander Chekel. All rights reserved.
 //
 
 import SwiftUI
 
-struct WordsOfTheDayView: View {
+struct DefinitionsView: View {
     @StateObject private var viewModel = ViewModel()
+
+    var definableTerm: DefinableTerm
 
     var body: some View {
         ScrollView {
@@ -25,19 +27,20 @@ struct WordsOfTheDayView: View {
                 } else if viewModel.canLoad {
                     ActivityIndicatorView(isAnimating: .constant(true))
                         .task {
-                            await viewModel.load()
+                            await viewModel.loadDefinitions(for: definableTerm.term)
                         }
                 }
             }
             .padding()
         }
         .background(Color.systemGrouppedBackground)
-        .navigationTitle("words_of_the_day_title")
+        .navigationTitle(LocalizedString("definitions_of_title", arguments: definableTerm.term))
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
+#Preview("DefinitionsView") {
     NavigationView {
-        WordsOfTheDayView()
+        DefinitionsView(definableTerm: .init(term: "iPhone"))
     }
 }

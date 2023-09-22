@@ -1,14 +1,14 @@
 //
-//  WordsOfTheDayView.ViewModel.swift
+//  DefinitionsView.ViewModel.swift
 //  UrbanDictionary
 //
-//  Created by Alexander Chekel on 21.09.2023.
+//  Created by Alexander Chekel on 22.09.2023.
 //  Copyright © 2023 Alexander Chekel. All rights reserved.
 //
 
 import SwiftUI
 
-extension WordsOfTheDayView {
+extension DefinitionsView {
     @MainActor class ViewModel: ObservableObject {
         @Published private(set) var words: [Word] = []
         @Published private(set) var canLoad: Bool = true
@@ -17,11 +17,11 @@ extension WordsOfTheDayView {
         private let service = UrbanDictionaryService()
         private var page: Int = 1
 
-        func load() async {
+        func loadDefinitions(for term: String) async {
             hasError = false
 
             do {
-                let result = try await service.wordsOfTheDay(page: page)
+                let result = try await service.define(term, page: page)
                 words.append(contentsOf: result)
 
                 page += 1
