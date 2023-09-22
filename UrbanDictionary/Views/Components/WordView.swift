@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct WordView: View {
-    @State private var isShareSheetPresented: Bool = false
-
     let word: Word
 
     init(_ word: Word) {
@@ -50,13 +48,11 @@ struct WordView: View {
                     Text("\(Image(systemName: "hand.thumbsdown")) \(word.thumbsDown)")
                     Text("\(Image(systemName: "person")) \(word.author)")
                     Spacer()
-                    Button {
-                        isShareSheetPresented.toggle()
-                    } label: {
+
+                    ShareLink(item: word.permalink) {
                         Image(systemName: "square.and.arrow.up")
                             .foregroundColor(.accentColor)
                     }
-                    .shareSheet(sharing: word.permalink, isPresented: $isShareSheetPresented)
                 }
                 .lineLimit(1)
                 .font(.footnote)
