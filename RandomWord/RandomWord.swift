@@ -107,7 +107,7 @@ struct RandomWordEntryView : View {
                 .tint(.primary)
         }
         .padding()
-        .widgetURL(URL(string: "https://application/definition?id=\(entry.id)"))
+        .widgetURL(URL(string: "urbandictionary:///definition?id=\(entry.id)"))
     }
 }
 

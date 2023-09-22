@@ -18,11 +18,17 @@ struct CoordinatorView: View {
                 .navigationDestination(for: DefinableTerm.self) { definableTerm in
                     DefinitionsView(definableTerm: definableTerm)
                 }
+                .navigationDestination(for: TermIdentifier.self) { termIdentifier in
+                    Text("Term with id \(termIdentifier.id)")
+                }
         }
         .environment(\.openURL, OpenURLAction { url in
             coordinatorObject.openUrl(url)
             return .handled
         })
+        .onOpenURL { url in
+            coordinatorObject.openUrl(url)
+        }
     }
 }
 

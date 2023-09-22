@@ -24,23 +24,28 @@ class CoordinatorObject: ObservableObject {
 
     func openUrl(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            assertionFailure("Failed to construct URLComponents from \(url.absoluteString)")
             return
         }
 
         guard let scheme = components.scheme, scheme == "urbandictionary" else {
-            assertionFailure("Unexpected url scheme")
             return
         }
 
         switch components.path {
             case "/define":
-                if let term = components.queryItems?.first(where: { $0.name == "term" })?.value {
-                    let definableTerm = DefinableTerm(term: term)
-                    navigationPath.append(definableTerm)
-                } else {
-                    assertionFailure("Url for '/define' path does not contain required 'term' or 'id' query parameters")
+                guard let term = components.queryItems?.first(where: { $0.name == "term" })?.value else {
+                    return
                 }
+
+                let definableTerm = DefinableTerm(term: term)
+                navigationPath.append(definableTerm)
+            case "/definition":
+                guard let id = components.queryItems?.first(where: { $0.name == "id" })?.value else {
+                    return
+                }
+
+                let termIdentifier = TermIdentifier(id: id)
+                navigationPath.append(termIdentifier)
             default:
                 break
         }

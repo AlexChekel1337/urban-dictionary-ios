@@ -66,6 +66,7 @@
 		E0D6319B2ABDA15F0041A5A0 /* DefinitionsView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6319A2ABDA15F0041A5A0 /* DefinitionsView.ViewModel.swift */; };
 		E0D631A02ABDA2140041A5A0 /* DefinableTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6319F2ABDA2140041A5A0 /* DefinableTerm.swift */; };
 		E0D631A22ABDAAD40041A5A0 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A12ABDAAD40041A5A0 /* CoordinatorObject.swift */; };
+		E0D631A42ABDB9660041A5A0 /* TermIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		E0D6319A2ABDA15F0041A5A0 /* DefinitionsView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.ViewModel.swift; sourceTree = "<group>"; };
 		E0D6319F2ABDA2140041A5A0 /* DefinableTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinableTerm.swift; sourceTree = "<group>"; };
 		E0D631A12ABDAAD40041A5A0 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
+		E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				E0D6319F2ABDA2140041A5A0 /* DefinableTerm.swift */,
+				E0D631A32ABDB9660041A5A0 /* TermIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E0A4F3F82ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift in Sources */,
 				E0A4F3FA2ABCE47800B25074 /* ErrorMessageView.swift in Sources */,
+				E0D631A42ABDB9660041A5A0 /* TermIdentifier.swift in Sources */,
 				E01A5FBD2A81113C00694C29 /* UrbanDictionaryApp.swift in Sources */,
 				E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */,
 				E01A5FCC2A8119CD00694C29 /* HTTPClient.swift in Sources */,
