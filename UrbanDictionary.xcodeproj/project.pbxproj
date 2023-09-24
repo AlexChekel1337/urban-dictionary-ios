@@ -33,8 +33,6 @@
 		E0371BFF2A90D11100573042 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0371BFE2A90D11100573042 /* LocalizedString.swift */; };
 		E0867D7B2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
 		E0867D7C2A92B27D00308CF1 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A5FDF2A81896A00694C29 /* Color+UIColor.swift */; };
-		E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31A2AA362D500B25074 /* PersistenceService.swift */; };
-		E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */; };
 		E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F32ABCCDA900B25074 /* CoordinatorView.swift */; };
 		E0A4F3F62ABCD72700B25074 /* WordsOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F52ABCD72600B25074 /* WordsOfTheDayView.swift */; };
 		E0A4F3F82ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4F3F72ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift */; };
@@ -123,8 +121,6 @@
 		E0371BFB2A90CF7B00573042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0371BFD2A90CF7D00573042 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0371BFE2A90D11100573042 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		E0A4F31A2AA362D500B25074 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanDictionary.xcdatamodel; sourceTree = "<group>"; };
 		E0A4F31F2AA366F300B25074 /* UrbanDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanDictionary.entitlements; sourceTree = "<group>"; };
 		E0A4F3202AA3678100B25074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E0A4F3F32ABCCDA900B25074 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
@@ -253,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				E01A5FD32A811C3C00694C29 /* UrbanDictionaryService */,
-				E0A4F3192AA362BE00B25074 /* PersistenceService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -321,17 +316,8 @@
 			children = (
 				E01A5FC02A81113C00694C29 /* Assets.xcassets */,
 				E0371BFC2A90CF7B00573042 /* Localizable.strings */,
-				E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E0A4F3192AA362BE00B25074 /* PersistenceService */ = {
-			isa = PBXGroup;
-			children = (
-				E0A4F31A2AA362D500B25074 /* PersistenceService.swift */,
-			);
-			path = PersistenceService;
 			sourceTree = "<group>";
 		};
 		E0D254352A88FA2400186BA0 /* RandomWord */ = {
@@ -507,7 +493,6 @@
 				E01A5FE02A81896A00694C29 /* Color+UIColor.swift in Sources */,
 				E01A5FE62A8198F100694C29 /* Suggestion.swift in Sources */,
 				E0D6319B2ABDA15F0041A5A0 /* DefinitionsView.ViewModel.swift in Sources */,
-				E0A4F31B2AA362D500B25074 /* PersistenceService.swift in Sources */,
 				E0D631DA2ABE254A0041A5A0 /* WordsOfTheDayView.SearchViewModel.swift in Sources */,
 				E0D631992ABDA12B0041A5A0 /* DefinitionsView.swift in Sources */,
 				E0A4F3F42ABCCDA900B25074 /* CoordinatorView.swift in Sources */,
@@ -518,7 +503,6 @@
 				E01A5FEA2A8285EC00694C29 /* URL+StaticString.swift in Sources */,
 				E01A5FDD2A817E2E00694C29 /* ActivityIndicatorView.swift in Sources */,
 				E0A4F3F62ABCD72700B25074 /* WordsOfTheDayView.swift in Sources */,
-				E0A4F31E2AA363F100B25074 /* UrbanDictionary.xcdatamodeld in Sources */,
 				E01A5FF82A86454B00694C29 /* UrbanDictionaryLinkTransformer.swift in Sources */,
 				E0A4F3F82ABCD74800B25074 /* WordsOfTheDayView.ViewModel.swift in Sources */,
 				E0A4F3FA2ABCE47800B25074 /* ErrorMessageView.swift in Sources */,
@@ -930,19 +914,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E0A4F31C2AA363F100B25074 /* UrbanDictionary.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */,
-			);
-			currentVersion = E0A4F31D2AA363F100B25074 /* UrbanDictionary.xcdatamodel */;
-			path = UrbanDictionary.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E01A5FB12A81113B00694C29 /* Project object */;
 }
