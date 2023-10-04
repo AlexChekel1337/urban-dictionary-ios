@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WordsOfTheDayView: View {
     @Environment(\.coordinatorObject) private var coordinator
+    @Environment(\.scenePhase) private var scenePhase
 
     @StateObject private var viewModel = ViewModel()
     @StateObject private var searchViewModel = SearchViewModel()
@@ -47,6 +48,11 @@ struct WordsOfTheDayView: View {
         }
         .onChange(of: searchTerm) { value in
             searchViewModel.search(for: value)
+        }
+        .onChange(of: scenePhase) { value in
+            guard value == .active else { return }
+
+            viewModel.reloadIfNeeded()
         }
     }
 }

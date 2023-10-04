@@ -28,11 +28,11 @@ class CoordinatorObject: ObservableObject {
     }
 
     func openUrl(_ url: URL) {
-        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            return
-        }
-
-        guard let scheme = components.scheme, scheme == "urbandictionary" else {
+        guard
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+            let scheme = components.scheme,
+            scheme == "urbandictionary"
+        else {
             return
         }
 

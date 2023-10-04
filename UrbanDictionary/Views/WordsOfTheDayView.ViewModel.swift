@@ -16,9 +16,11 @@ extension WordsOfTheDayView {
 
         private let service = UrbanDictionaryService()
         private var page: Int = 1
+        private var lastLoadDate = Date()
 
         func load() async {
             hasError = false
+            lastLoadDate = Date()
 
             do {
                 let result = try await service.wordsOfTheDay(page: page)
@@ -33,6 +35,20 @@ extension WordsOfTheDayView {
         }
 
         func retry() {
+            hasError = false
+            canLoad = true
+        }
+
+        func reloadIfNeeded() {
+            // Minimum threshold of refreshing the content is 30 minutes
+            let minimumRequiredInterval: TimeInterval = 1800
+
+            guard Date().timeIntervalSince(lastLoadDate) >= minimumRequiredInterval else {
+                return
+            }
+
+            page = 1
+            words = []
             hasError = false
             canLoad = true
         }
