@@ -107,8 +107,7 @@ struct WordOfTheDayEntryView : View {
                 .redacted(reason: entry.isPlaceholder ? .placeholder : [])
                 .tint(.primary)
         }
-        .applyingWidgetPadding()
-        .applyingDefaultWidgetBackground()
+        .widgetBackground {}
         .widgetURL(URL(string: "urbandictionary:///definition?id=\(entry.id)"))
     }
 }

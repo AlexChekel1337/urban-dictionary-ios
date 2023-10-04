@@ -10,27 +10,17 @@ import SwiftUI
 import WidgetKit
 
 extension View {
-    /// iOS 17 automatically adds brand new content margin
-    /// to widget's body based on its environment. This
-    /// modifier adds a padding on older versions of iOS.
-    @ViewBuilder
-    func applyingWidgetPadding() -> some View {
-        if #unavailable(iOS 17) {
-            self.padding()
-        } else {
-            self
-        }
-    }
-
-    /// A `.containerBackground(for: .widget)` modifier wrapper
-    /// with iOS availability check. Does notihing on iOS versions
-    /// prior to 17.
-    @ViewBuilder
-    func applyingDefaultWidgetBackground() -> some View {
+    /// Provides a background of the widget. Starting from iOS 17 system can remove
+    /// widget's background depending on the context. This modifier does an availability check
+    /// and sets background either using `.containerBackground(for: .widget) { ... }` when run
+    /// on iOS 17 and later, or `.background` on iOS 16 and earlier.
+    func widgetBackground(@ViewBuilder content: @escaping () -> some View) -> some View {
         if #available(iOS 17, *) {
-            self.containerBackground(for: .widget) {}
+            return self
+                .containerBackground(for: .widget, content: content)
         } else {
-            self
+            return self
+                .background(content: content)
         }
     }
 }
