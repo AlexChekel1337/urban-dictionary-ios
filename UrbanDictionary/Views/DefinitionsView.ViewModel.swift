@@ -25,7 +25,7 @@ extension DefinitionsView {
                 words.append(contentsOf: result)
 
                 page += 1
-                canLoad = !result.isEmpty
+                canLoad = result.count == service.pageSize
             } catch {
                 hasError = true
                 canLoad = false

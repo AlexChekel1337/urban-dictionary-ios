@@ -21,6 +21,8 @@ enum UrbanDictionaryServiceError: Error {
 }
 
 class UrbanDictionaryService {
+    let pageSize: Int = 10
+
     private let client: HTTPClient = .init(baseUrl: "https://api.urbandictionary.com")
 
     func wordsOfTheDay(page: Int = 1) async throws -> [Word] {
